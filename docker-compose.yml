@@ -4,7 +4,7 @@ services:
   nest-server:
     container_name: nest
     build:
-      context: ./nest
+      context: ./nest-server
       dockerfile: ./Dockerfile
     ports:
       - 3001:3001
@@ -19,7 +19,7 @@ services:
       DATABASE_USERNAME: strapi
       DATABASE_PASSWORD: strapi
     build:
-      context: ./strapi
+      context: ./strapi-server
       dockerfile: ./Dockerfile
     ports:
       - 1337:1337
