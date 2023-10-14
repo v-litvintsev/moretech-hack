@@ -11,14 +11,9 @@
         @update:center="centerUpdate"
         @update:zoom="zoomUpdated"
       >
-        <l-tile-layer :url="url"></l-tile-layer>
-        <l-marker :lat-lng="center">
-          <l-icon>
-            <v-icon large color="blue" class="darken-2">
-              mdi-map-marker
-            </v-icon>
-          </l-icon>
-        </l-marker>
+        <l-tile-layer :url="url" />
+        <l-marker :lat-lng="center" />
+        <v-marker-cluster>
         <l-marker
           v-for="(item, idx) in officeList"
           :key="`office-${idx}`"
@@ -41,6 +36,8 @@
             </l-icon>
           </l-marker>
         </template>
+        </v-marker-cluster>
+        <l-routing-machine v-if="officeList.length" :waypoints="getWaypoints"/>
       </l-map>
     </div>
     <div class="actions-wrapper pa-3">
@@ -94,12 +91,17 @@
 </template>
 
 <script>
-import { latLng } from "leaflet";
-import {LMap, LMarker, LTileLayer, LIcon} from 'vue2-leaflet';
+import { latLng } from 'leaflet'
+import {LMap, LMarker, LTileLayer, LIcon} from 'vue2-leaflet'
+import Vue2LeafletMarkerCluster from 'vue2-leaflet-markercluster'
+import LRM from '@/components/LRM'
+
 
 export default {
   name: 'IndexPage',
   components: {
+    'v-marker-cluster': Vue2LeafletMarkerCluster,
+    'l-routing-machine': LRM,
     LMap,
     LTileLayer,
     LMarker,
@@ -123,15 +125,17 @@ export default {
   fetch() {
     this.$axios.$get('api/get-map-items')
       .then(res => {
-        this.officeList = res.offices;
+        this.officeList = res.offices.reverse();
         this.atmList = res.atms;
       })
-    if (this.$route.query?.name && this.$route.query?.userType) {
+    if (this.$store.state.name && this.$store.state.userType) {
       this.$axios.$post('api/get-offices', {
-        service: this.$route.query.name,
-        userType: this.$route.query.userType
+        service: this.$store.state.name,
+        userType: this.$store.state.userType
       }).then(res => {
-        console.log(res)
+        this.filtersOfficeList = res.offices
+        this.$store.commit('name',null)
+        this.$store.commit('userType', null)
       })
     }
   },
@@ -144,6 +148,14 @@ export default {
       console.log(err);
     };
     navigator.geolocation.getCurrentPosition(success, error);
+  },
+  computed: {
+    getWaypoints() {
+      return [
+        {...this.center},
+        {lat: this.officeList[0].latitude, lng: this.officeList[0].longitude}
+      ]
+    }
   },
   methods: {
     zoomUpdated (zoom) {
