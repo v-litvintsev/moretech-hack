@@ -2,13 +2,13 @@
   <div class="base-wrapper">
     <div class="map">
       <yandex-map
-        :coords="coords"
+        :coords="[latitude, longitude]"
         :zoom="8"
         style="width: 100%; height: 100%;"
       >
         <ymap-marker
           marker-id="123"
-          :coords="coords"
+          :coords="[latitude, longitude]"
           hint-content="some hint"
         />
       </yandex-map>
@@ -20,6 +20,7 @@
         solo
         elevation="0"
         class="blue darken-3 rounded-xl mt-2"
+        @click="$router.push('/services')"
       >
         Выбрать услугу
       </v-btn>
@@ -67,10 +68,22 @@ export default {
   },
   data() {
     return {
-      coords: [54.82, 39.83],
+      latitude: 0,
+      longitude: 0,
       searchModal: false,
     }
   },
+  created() {
+    const success = (position) => {
+      this.latitude  = position.coords.latitude;
+      this.longitude = position.coords.longitude;
+    };
+
+    const error = (err) => {
+      console.log(err)
+    };
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
 }
 </script>
 <style scoped lang="scss">
