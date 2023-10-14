@@ -12,6 +12,7 @@ import { IOffice } from './types/office';
 import { IAtm } from './types/atm';
 
 const USER_COORDS = { latitude: 55.6908465, longitude: 37.5595371 };
+const RISK_MULTIPLIER = 1.15;
 
 class GetSuitableOfficesDto {
   service: string;
@@ -92,7 +93,7 @@ export class AppController {
       (body.userType === 'individual' || body.userType === 'legal')
     ) {
       if (body.userType === 'individual') {
-        const outputOffices = this.offices
+        const filteredAndSortedOffices = this.offices
           .filter((office) =>
             office.servicesListIndividual.some(
               (officeService) => officeService.name === body.service,
@@ -113,11 +114,40 @@ export class AppController {
             return a.userDistance - b.userDistance;
           });
 
+        filteredAndSortedOffices.length = 20;
+
+        const outputOffices = filteredAndSortedOffices.map((office) => {
+          if (body.isPrivileged) {
+            return {
+              ...office,
+              queueTime:
+                (office.queueIndividualPrivileged.reduce(
+                  (acc, service) => acc + service.averageTime,
+                  0,
+                ) /
+                  (office.windowsIndividualPrivileged +
+                    office.windowsIndividual)) *
+                RISK_MULTIPLIER,
+            };
+          }
+
+          return {
+            ...office,
+            queueTime:
+              (office.queueIndividual.reduce(
+                (acc, service) => acc + service.averageTime,
+                0,
+              ) /
+                office.windowsIndividual) *
+              RISK_MULTIPLIER,
+          };
+        });
+
         return { offices: outputOffices };
       }
 
       if (body.userType === 'legal') {
-        const outputOffices = this.offices
+        const filteredAndSortedOffices = this.offices
           .filter((office) =>
             office.servicesListLegal.some(
               (officeService) => officeService.name === body.service,
@@ -127,7 +157,9 @@ export class AppController {
             return {
               ...office,
               userDistance: Math.sqrt(
-                (body.coordinates.latitude + body.coordinates.longitude) ** 2 +
+                // (body.coordinates.latitude + body.coordinates.longitude) ** 2 +
+                //   (office.latitude + office.longitude) ** 2,
+                (USER_COORDS.latitude + USER_COORDS.longitude) ** 2 +
                   (office.latitude + office.longitude) ** 2,
               ),
             };
@@ -135,6 +167,21 @@ export class AppController {
           .sort((a, b) => {
             return a.userDistance - b.userDistance;
           });
+
+        filteredAndSortedOffices.length = 20;
+
+        const outputOffices = filteredAndSortedOffices.map((office) => {
+          return {
+            ...office,
+            queueTime:
+              (office.queueLegal.reduce(
+                (acc, service) => acc + service.averageTime,
+                0,
+              ) /
+                office.windowsLegal) *
+              RISK_MULTIPLIER,
+          };
+        });
 
         return { offices: outputOffices };
       }

@@ -5,9 +5,7 @@ interface IService {
   averageTime: number; // В минутах
 }
 
-interface IQueue {
-  services: IService[];
-}
+type TQueue = IService[];
 
 export interface IOffice {
   salePointName: string;
@@ -20,9 +18,9 @@ export interface IOffice {
   windowsLegal: number;
   windowsIndividual: number;
   windowsIndividualPrivileged: number;
-  queueLegal: IQueue;
-  queueIndividual: IQueue;
-  queueIndividualPrivileged: IQueue;
+  queueLegal: TQueue;
+  queueIndividual: TQueue;
+  queueIndividualPrivileged: TQueue;
   servicesListLegal: IService[];
   servicesListIndividual: IService[];
   isLegalServing: boolean;
