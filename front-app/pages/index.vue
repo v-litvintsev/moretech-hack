@@ -43,6 +43,7 @@
           </l-marker>
         </template>
         </v-marker-cluster>
+        <l-routing-machine v-if="officeList.length" :waypoints="getWaypoints"/>
       </l-map>
     </div>
     <div class="actions-wrapper pa-3">
@@ -96,14 +97,17 @@
 </template>
 
 <script>
-import { latLng } from "leaflet";
-import {LMap, LMarker, LTileLayer, LIcon} from 'vue2-leaflet';
+import { latLng } from 'leaflet'
+import {LMap, LMarker, LTileLayer, LIcon} from 'vue2-leaflet'
 import Vue2LeafletMarkerCluster from 'vue2-leaflet-markercluster'
+import LRM from '@/components/LRM'
+
 
 export default {
   name: 'IndexPage',
   components: {
     'v-marker-cluster': Vue2LeafletMarkerCluster,
+    'l-routing-machine': LRM,
     LMap,
     LTileLayer,
     LMarker,
@@ -127,7 +131,7 @@ export default {
   fetch() {
     this.$axios.$get('api/get-map-items')
       .then(res => {
-        this.officeList = res.offices;
+        this.officeList = res.offices.reverse();
         this.atmList = res.atms;
       })
     if (this.$store.state.name && this.$store.state.userType) {
@@ -150,6 +154,14 @@ export default {
       console.log(err);
     };
     navigator.geolocation.getCurrentPosition(success, error);
+  },
+  computed: {
+    getWaypoints() {
+      return [
+        {...this.center},
+        {lat: this.officeList[0].latitude, lng: this.officeList[0].longitude}
+      ]
+    }
   },
   methods: {
     zoomUpdated (zoom) {
