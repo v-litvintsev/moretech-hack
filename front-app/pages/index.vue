@@ -38,9 +38,9 @@
       <v-divider class="mt-3 mb-3 grey lighten-2"></v-divider>
       <v-btn outlined width="100%" class="black--text" large @click="searchModal = true">
        <v-icon class="mr-2">
-        mdi-magnify
+        mdi-format-list-group
        </v-icon>
-        Поиск
+        Показать все отделения
       </v-btn>
       <div class="search-box-container" :class="{'search-box-container--open': searchModal}">
         <template v-if="searchModal">
