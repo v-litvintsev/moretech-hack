@@ -68,6 +68,7 @@ const outputOffices = officesData.map((officeData) => {
       ...officeData,
       windowsIndividual,
       windowsLegal,
+      windowsPrivilegedLegal: 0,
       queueIndividual,
       queueIndividualPrivileged: [],
       queueLegal,
@@ -77,15 +78,26 @@ const outputOffices = officesData.map((officeData) => {
   }
 
   if (isPrivilegedServed) {
+    const windowsPrivilegedLegal = 1 + Math.floor(Math.random() * 1);
+    const queueIndividualPrivileged = Array(Math.floor(Math.random() * 8))
+      .fill(null)
+      .map(
+        () =>
+          INDIVIDUAL_SERVICES[
+            Math.floor(Math.random() * INDIVIDUAL_SERVICES.length)
+          ],
+      );
+
     return {
       ...officeData,
       windowsIndividual,
       windowsLegal: 0,
       queueIndividual,
-      queueIndividualPrivileged: [],
       queueLegal: [],
       isLegalServing,
       isPrivilegedServed,
+      windowsPrivilegedLegal,
+      queueIndividualPrivileged,
     };
   }
 
@@ -93,6 +105,7 @@ const outputOffices = officesData.map((officeData) => {
     ...officeData,
     windowsIndividual,
     windowsLegal: 0,
+    windowsPrivilegedLegal: 0,
     queueIndividual,
     queueIndividualPrivileged: [],
     queueLegal: [],

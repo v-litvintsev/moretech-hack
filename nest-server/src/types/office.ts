@@ -10,7 +10,7 @@ interface IQueue {
 }
 
 export interface IOffice {
-  pointName: string;
+  salePointName: string;
   latitude: number;
   longitude: number;
   address: string;
@@ -19,6 +19,7 @@ export interface IOffice {
   openHoursForIndividual: IOpenHoursItem[]; // Режим работы для физ лиц
   windowsLegal: number;
   windowsIndividual: number;
+  windowsIndividualPrivileged: number;
   queueLegal: IQueue;
   queueIndividual: IQueue;
   queueIndividualPrivileged: IQueue;

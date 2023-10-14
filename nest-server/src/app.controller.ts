@@ -1,8 +1,17 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  HttpException,
+  HttpStatus,
+  Post,
+} from '@nestjs/common';
 import { AppService } from './app.service';
 import * as fs from 'fs';
 import { IOffice } from './types/office';
 import { IAtm } from './types/atm';
+
+const USER_COORDS = { latitude: 55.6908465, longitude: 37.5595371 };
 
 class GetSuitableOfficesDto {
   service: string;
@@ -78,53 +87,61 @@ export class AppController {
 
   @Post('/api/get-offices')
   getOffices(@Body() body: GetSuitableOfficesDto) {
-    if (body.service) {
+    if (
+      body.service &&
+      (body.userType === 'individual' || body.userType === 'legal')
+    ) {
       if (body.userType === 'individual') {
-        const suitableOffices = this.offices.filter((office) =>
-          office.servicesListIndividual.some(
-            (officeService) => officeService.name === body.service,
-          ),
-        );
+        const outputOffices = this.offices
+          .filter((office) =>
+            office.servicesListIndividual.some(
+              (officeService) => officeService.name === body.service,
+            ),
+          )
+          .map((office) => {
+            return {
+              ...office,
+              userDistance: Math.sqrt(
+                // (body.coordinates.latitude + body.coordinates.longitude) ** 2 +
+                //   (office.latitude + office.longitude) ** 2,
+                (USER_COORDS.latitude + USER_COORDS.longitude) ** 2 +
+                  (office.latitude + office.longitude) ** 2,
+              ),
+            };
+          })
+          .sort((a, b) => {
+            return a.userDistance - b.userDistance;
+          });
 
-        return { offices: suitableOffices };
+        return { offices: outputOffices };
       }
 
       if (body.userType === 'legal') {
-        const suitableOffices = this.offices.filter((office) =>
-          office.servicesListLegal.some(
-            (officeService) => officeService.name === body.service,
-          ),
-        );
+        const outputOffices = this.offices
+          .filter((office) =>
+            office.servicesListLegal.some(
+              (officeService) => officeService.name === body.service,
+            ),
+          )
+          .map((office) => {
+            return {
+              ...office,
+              userDistance: Math.sqrt(
+                (body.coordinates.latitude + body.coordinates.longitude) ** 2 +
+                  (office.latitude + office.longitude) ** 2,
+              ),
+            };
+          })
+          .sort((a, b) => {
+            return a.userDistance - b.userDistance;
+          });
 
-        return { offices: suitableOffices };
+        return { offices: outputOffices };
       }
 
       return { offices: this.offices };
     } else {
-      return { offices: this.offices };
+      throw new HttpException('Bad request', HttpStatus.BAD_REQUEST);
     }
   }
-
-  // @Post('/api/get-suitable-offices')
-  // getSuitableOffices(@Body() body: GetSuitableOfficesDto) {
-  //   const outputOffices = this.offices
-  //     .map((office) => {
-  //       return {
-  //         ...office,
-  //         userDistance: Math.sqrt(
-  //           (body.coordinates.latitude + body.coordinates.longitude) ** 2 +
-  //             (office.latitude + office.longitude) ** 2,
-  //         ),
-  //       };
-  //     })
-  //     .sort((a, b) => {
-  //       return a.userDistance - b.userDistance;
-  //     });
-
-  //   if (body.userType === 'individual') {
-  //     return;
-  //   }
-
-  //   return { offices: outputOffices };
-  // }
 }
