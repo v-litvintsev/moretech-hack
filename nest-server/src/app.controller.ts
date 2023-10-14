@@ -1,8 +1,17 @@
-import { Controller, Get, Query } from '@nestjs/common';
+import { Body, Controller, Get, Post, Query } from '@nestjs/common';
 import { AppService } from './app.service';
 import * as fs from 'fs';
 import { IOffice } from './types/office';
 import { IAtm } from './types/atm';
+
+class GetSuitableOfficesDto {
+  coordinates: {
+    latitude: number;
+    longitude: number;
+  };
+  userType: 'legal' | 'individual';
+  isPrivileged?: boolean;
+}
 
 @Controller()
 export class AppController {
@@ -29,6 +38,40 @@ export class AppController {
     return {
       offices: this.offices,
       atms: this.atms,
+    };
+  }
+
+  @Get('/api/get-services')
+  getServices() {
+    return {
+      individual: [
+        {
+          name: 'Оплата счетов и коммунальных услуг',
+          averageTime: 7,
+        },
+        {
+          name: 'Выпуск и обслуживание банковских карт (дебетовых и кредитных)',
+          averageTime: 4,
+        },
+        {
+          name: 'Потребительские кредиты (на личные нужды)',
+          averageTime: 11,
+        },
+      ],
+      legal: [
+        {
+          name: 'Расчетно-кассовое обслуживание',
+          averageTime: 15,
+        },
+        {
+          name: 'Документарные операции',
+          averageTime: 21,
+        },
+        {
+          name: 'Эквайринг',
+          averageTime: 13,
+        },
+      ],
     };
   }
 
@@ -63,4 +106,27 @@ export class AppController {
       return { offices: this.offices };
     }
   }
+
+  // @Post('/api/get-suitable-offices')
+  // getSuitableOffices(@Body() body: GetSuitableOfficesDto) {
+  //   const outputOffices = this.offices
+  //     .map((office) => {
+  //       return {
+  //         ...office,
+  //         userDistance: Math.sqrt(
+  //           (body.coordinates.latitude + body.coordinates.longitude) ** 2 +
+  //             (office.latitude + office.longitude) ** 2,
+  //         ),
+  //       };
+  //     })
+  //     .sort((a, b) => {
+  //       return a.userDistance - b.userDistance;
+  //     });
+
+  //   if (body.userType === 'individual') {
+  //     return;
+  //   }
+
+  //   return { offices: outputOffices };
+  // }
 }
