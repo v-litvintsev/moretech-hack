@@ -4,6 +4,14 @@
       <div class="atm-switcher black rounded-xl pt-1 pb-1 pr-2 pl-2">
         <v-switch v-model="atmsStatus" class="ma-0 pt-0" hide-details label="ATM" />
       </div>
+      <div v-if="loadingRouting" class="loader">
+        <v-progress-circular
+          indeterminate
+          color="grey"
+          size="100"
+        >
+        </v-progress-circular>
+      </div>
       <l-map
         style="height: 100%; width: 100%"
         :zoom="zoom"
@@ -37,7 +45,7 @@
           </l-marker>
         </template>
         </v-marker-cluster>
-        <l-routing-machine v-if="officeList.length" :waypoints="getWaypoints"/>
+        <l-routing-machine v-if="filtersOfficeList.length && endPoint" :waypoints="getWaypoints"/>
       </l-map>
     </div>
     <div class="actions-wrapper pa-3">
@@ -87,6 +95,9 @@
         </template>
       </div>
     </div>
+    <v-btn @click="parseDistance">
+      parse
+    </v-btn>
   </div>
 </template>
 
@@ -109,6 +120,7 @@ export default {
   },
   data() {
     return {
+      loadingRouting: false,
       atmsStatus: false,
       currentCenter: latLng(55.6908465, 37.5595371),
       center: latLng(55.6908465, 37.5595371),
@@ -117,53 +129,70 @@ export default {
       zoom: 11,
       bounds: null,
       officeList: [],
-      filtersOfficeList:[],
+      filtersOfficeList: [],
       atmList: [],
       currentPint: null,
+      endPoint: null
     }
   },
   fetch() {
-    this.$axios.$get('api/get-map-items')
-      .then(res => {
-        this.officeList = res.offices.reverse();
-        this.atmList = res.atms;
-      })
     if (this.$store.state.name && this.$store.state.userType) {
+      this.loadingRouting = true
       this.$axios.$post('api/get-offices', {
         service: this.$store.state.name,
         userType: this.$store.state.userType
       }).then(res => {
+        this.endPoint = {lat: res.offices[0].latitude, lng:  res.offices[0].longitude}
         this.filtersOfficeList = res.offices
-        this.$store.commit('name',null)
+        this.$store.commit('name', null)
         this.$store.commit('userType', null)
+        this.parseDistance()
       })
+    }
+    this.$axios.$get('api/get-map-items')
+      .then(res => {
+        this.officeList = res.offices;
+        this.atmList = res.atms;
+      })
+  },
+  computed:{
+    getWaypoints() {
+      return [
+        {...this.center},
+        this.endPoint ? this.endPoint : {...this.center}
+      ]
     }
   },
   created() {
     const success = (position) => {
-      this.latitude  = position.coords.latitude;
+      this.latitude = position.coords.latitude;
       this.longitude = position.coords.longitude;
     };
-    const error = (err) => {
+    const error = err => {
       console.log(err);
     };
     navigator.geolocation.getCurrentPosition(success, error);
   },
-  computed: {
-    getWaypoints() {
-      return [
-        {...this.center},
-        {lat: this.officeList[0].latitude, lng: this.officeList[0].longitude}
-      ]
-    }
-  },
   methods: {
-    zoomUpdated (zoom) {
+    zoomUpdated(zoom) {
       this.zoom = zoom;
     },
     centerUpdate(center) {
       this.currentCenter = center;
     },
+    parseDistance() {
+      const htmlList = document.getElementsByClassName('leaflet-routing-alt-minimized')
+      if (htmlList.length) {
+        const innerHtml = htmlList[0].innerHTML
+        const distance = innerHtml.split('h2')[1].split('').splice(1, innerHtml.split('h2')[1].split('').length - 3).join('')
+        const address = innerHtml.split('h3')[1].split('').splice(1, innerHtml.split('h3')[1].split('').length - 3).join('')
+        console.log(distance)
+        console.log(address)
+      }
+      setTimeout(() => {
+        this.loadingRouting = false
+      }, 500)
+    }
   }
 }
 </script>
@@ -181,6 +210,21 @@ export default {
       position: absolute;
       top: 14px;
       right: 60px;
+    }
+    .loader {
+      color: black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      z-index: 1100;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
     }
   }
   .actions-wrapper {
@@ -207,4 +251,7 @@ export default {
     }
   }
 }
+</style>
+<style lang="scss">
+
 </style>

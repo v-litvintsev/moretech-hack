@@ -81,8 +81,8 @@ const props = {
 // ]
 
 export default {
-  props,
   name: 'LRoutingMachine',
+  props,
   data() {
     return {
       parentContainer: null,
@@ -132,8 +132,3 @@ export default {
   }
 }
 </script>
-<style lang="scss">
-.leaflet-routing-container {
-  display: none !important;
-}
-</style>
