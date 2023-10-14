@@ -1,10 +1,11 @@
-import { Body, Controller, Get, Post, Query } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { AppService } from './app.service';
 import * as fs from 'fs';
 import { IOffice } from './types/office';
 import { IAtm } from './types/atm';
 
 class GetSuitableOfficesDto {
+  service: string;
   coordinates: {
     latitude: number;
     longitude: number;
@@ -75,26 +76,23 @@ export class AppController {
     };
   }
 
-  @Get('/api/get-offices')
-  getOffices(
-    @Query('service') service,
-    @Query('userType') userType: 'individual' | 'legal',
-  ) {
-    if (service) {
-      if (userType === 'individual') {
+  @Post('/api/get-offices')
+  getOffices(@Body() body: GetSuitableOfficesDto) {
+    if (body.service) {
+      if (body.userType === 'individual') {
         const suitableOffices = this.offices.filter((office) =>
           office.servicesListIndividual.some(
-            (officeService) => officeService.name === service,
+            (officeService) => officeService.name === body.service,
           ),
         );
 
         return { offices: suitableOffices };
       }
 
-      if (userType === 'legal') {
+      if (body.userType === 'legal') {
         const suitableOffices = this.offices.filter((office) =>
           office.servicesListLegal.some(
-            (officeService) => officeService.name === service,
+            (officeService) => officeService.name === body.service,
           ),
         );
 
