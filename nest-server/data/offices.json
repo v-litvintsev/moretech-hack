@@ -1,0 +1,1111 @@
+[
+  {
+    "userDistance": 0.08894110099532081,
+    "salePointName": "ДО «ГУМ» Филиала № 7701 Банка ВТБ (ПАО)",
+    "address": "109012, г. Москва, Красная площадь, д. 3",
+    "status": "открытая",
+    "openHours": [
+      {
+        "days": "Не обслуживает ЮЛ",
+        "hours": null
+      }
+    ],
+    "rko": "нет РКО",
+    "openHoursIndividual": [
+      {
+        "days": "пн",
+        "hours": "10:00-22:00"
+      },
+      {
+        "days": "вт",
+        "hours": "10:00-22:00"
+      },
+      {
+        "days": "ср",
+        "hours": "10:00-22:00"
+      },
+      {
+        "days": "чт",
+        "hours": "10:00-22:00"
+      },
+      {
+        "days": "пт",
+        "hours": "10:00-22:00"
+      },
+      {
+        "days": "сб",
+        "hours": "10:00-22:00"
+      },
+      {
+        "days": "вс",
+        "hours": "10:00-22:00"
+      }
+    ],
+    "officeType": "Да (Зона Привилегия)",
+    "salePointFormat": "Розничный (РБ)",
+    "suoAvailability": "Y",
+    "hasRamp": "Y",
+    "latitude": 55.754742,
+    "longitude": 37.621407,
+    "metroStation": "Москва, Арбатско-Покровская линия, метро Площадь Революции",
+    "distance": 95,
+    "kep": false,
+    "myBranch": false
+  },
+  {
+    "userDistance": 0.09358646367429733,
+    "salePointName": "ДО «Б. Черкасский, 10/11» Филиала № 7701 Банка ВТБ (ПАО)",
+    "address": "109097, г. Москва, Б. Черкасский пер., д. 10/11, стр. 1",
+    "status": "открытая",
+    "openHours": [
+      {
+        "days": "Не обслуживает ЮЛ",
+        "hours": null
+      }
+    ],
+    "rko": "нет РКО",
+    "openHoursIndividual": [
+      {
+        "days": "пн",
+        "hours": "09:00-17:00"
+      },
+      {
+        "days": "вт",
+        "hours": "09:00-17:00"
+      },
+      {
+        "days": "ср",
+        "hours": "09:00-17:00"
+      },
+      {
+        "days": "чт",
+        "hours": "09:00-17:00"
+      },
+      {
+        "days": "пт",
+        "hours": "09:00-17:00"
+      },
+      {
+        "days": "сб",
+        "hours": "выходной"
+      },
+      {
+        "days": "вс",
+        "hours": "выходной"
+      }
+    ],
+    "officeType": "закрытый доступ, находится в здании Министерства финансов РФ",
+    "salePointFormat": "Розничный (РБ)",
+    "suoAvailability": "N",
+    "hasRamp": "N",
+    "latitude": 55.756058,
+    "longitude": 37.626663,
+    "metroStation": "Москва, Арбатско-Покровская линия, метро Площадь Революции",
+    "distance": 448,
+    "kep": false,
+    "myBranch": false
+  },
+  {
+    "userDistance": 0.08767016198376575,
+    "salePointName": "ДО «Охотный ряд-Прайм» Филиала № 7777 Банка ВТБ (ПАО)",
+    "address": "103265, г. Москва, Охотный ряд, д. 1",
+    "status": "открытая",
+    "openHours": [
+      {
+        "days": "Не обслуживает ЮЛ",
+        "hours": null
+      }
+    ],
+    "rko": null,
+    "openHoursIndividual": [
+      {
+        "days": "пн",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "вт",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "ср",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "чт",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "пт",
+        "hours": "09:00-16:45"
+      },
+      {
+        "days": "сб",
+        "hours": "выходной"
+      },
+      {
+        "days": "вс",
+        "hours": "выходной"
+      }
+    ],
+    "officeType": "Да",
+    "salePointFormat": "Прайм (РБ)",
+    "suoAvailability": "N",
+    "hasRamp": "N",
+    "latitude": 55.757996,
+    "longitude": 37.615902,
+    "metroStation": "Москва, Сокольническая линия, метро Охотный Ряд",
+    "distance": 517,
+    "kep": false,
+    "myBranch": false
+  },
+  {
+    "userDistance": 0.08729580422139817,
+    "salePointName": "ДО «Георгиевский» Филиала № 7701 Банка ВТБ (ПАО)",
+    "address": "103265, г. Москва, Георгиевский пер., д. 2",
+    "status": "открытая",
+    "openHours": [
+      {
+        "days": "Не обслуживает ЮЛ",
+        "hours": null
+      }
+    ],
+    "rko": "нет РКО",
+    "openHoursIndividual": [
+      {
+        "days": "пн",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "вт",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "ср",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "чт",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "пт",
+        "hours": "09:00-17:00"
+      },
+      {
+        "days": "сб",
+        "hours": "выходной"
+      },
+      {
+        "days": "вс",
+        "hours": "выходной"
+      }
+    ],
+    "officeType": "пропускная система, находится в здании ГосДумы",
+    "salePointFormat": "Розничный (РБ)",
+    "suoAvailability": "N",
+    "hasRamp": "N",
+    "latitude": 55.758476,
+    "longitude": 37.614735,
+    "metroStation": "Москва, Сокольническая линия, метро Охотный Ряд",
+    "distance": 603,
+    "kep": false,
+    "myBranch": false
+  },
+  {
+    "userDistance": 0.09443250375935307,
+    "salePointName": "ДО ЦИК «Пушечный» Филиала № 7701 Банка ВТБ (ПАО)",
+    "address": "107031, г. Москва, ул. Кузнецкий мост, д. 16/5, стр. 1",
+    "status": "открытая",
+    "openHours": [
+      {
+        "days": "Не обслуживает ЮЛ",
+        "hours": null
+      }
+    ],
+    "rko": "нет РКО",
+    "openHoursIndividual": [
+      {
+        "days": "пн",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "вт",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "ср",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "чт",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "пт",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "сб",
+        "hours": "выходной"
+      },
+      {
+        "days": "вс",
+        "hours": "выходной"
+      }
+    ],
+    "officeType": "Да",
+    "salePointFormat": "Розничный (РБ)",
+    "suoAvailability": "N",
+    "hasRamp": "Y",
+    "latitude": 55.761597,
+    "longitude": 37.622082,
+    "metroStation": "Москва, Таганско-Краснопресненская линия, метро Кузнецкий Мост",
+    "distance": 841,
+    "kep": false,
+    "myBranch": false
+  },
+  {
+    "userDistance": 0.09893172759969794,
+    "salePointName": "ДО «Лучников переулок» Филиала № 7701 Банка ВТБ (ПАО)",
+    "address": "101990, г. Москва Лучников переулок, д.7/4, строение 1",
+    "status": "открытая",
+    "openHours": [
+      {
+        "days": "Не обслуживает ЮЛ",
+        "hours": null
+      }
+    ],
+    "rko": null,
+    "openHoursIndividual": [
+      {
+        "days": "пн",
+        "hours": "09:00-20:00"
+      },
+      {
+        "days": "вт",
+        "hours": "09:00-20:00"
+      },
+      {
+        "days": "ср",
+        "hours": "09:00-20:00"
+      },
+      {
+        "days": "чт",
+        "hours": "09:00-20:00"
+      },
+      {
+        "days": "пт",
+        "hours": "09:00-20:00"
+      },
+      {
+        "days": "сб",
+        "hours": "10:00-16:00"
+      },
+      {
+        "days": "вс",
+        "hours": "выходной"
+      }
+    ],
+    "officeType": "Да",
+    "salePointFormat": "Розничный (РБ)",
+    "suoAvailability": "N",
+    "hasRamp": "N",
+    "latitude": 55.758884,
+    "longitude": 37.631359,
+    "metroStation": "Москва, Калужско-Рижская линия, метро Китай-город",
+    "distance": 868,
+    "kep": false,
+    "myBranch": false
+  },
+  {
+    "userDistance": 0.08667462276502987,
+    "salePointName": "ДО «Тверской» Филиала № 7701 Банка ВТБ (ПАО)",
+    "address": "125009, г. Москва, ул. Тверская, д. 6/1, стр. 7",
+    "status": "открытая",
+    "openHours": [
+      {
+        "days": "пн",
+        "hours": "10:00-19:00"
+      },
+      {
+        "days": "вт",
+        "hours": "10:00-19:00"
+      },
+      {
+        "days": "ср",
+        "hours": "10:00-19:00"
+      },
+      {
+        "days": "чт",
+        "hours": "10:00-19:00"
+      },
+      {
+        "days": "пт",
+        "hours": "10:00-18:00"
+      },
+      {
+        "days": "сб",
+        "hours": "выходной"
+      },
+      {
+        "days": "вс",
+        "hours": "выходной"
+      }
+    ],
+    "rko": "есть РКО",
+    "openHoursIndividual": [
+      {
+        "days": "пн",
+        "hours": "10:00-19:00"
+      },
+      {
+        "days": "вт",
+        "hours": "10:00-19:00"
+      },
+      {
+        "days": "ср",
+        "hours": "10:00-19:00"
+      },
+      {
+        "days": "чт",
+        "hours": "10:00-19:00"
+      },
+      {
+        "days": "пт",
+        "hours": "10:00-19:00"
+      },
+      {
+        "days": "сб",
+        "hours": "выходной"
+      },
+      {
+        "days": "вс",
+        "hours": "выходной"
+      }
+    ],
+    "officeType": "Да (Зона Привилегия)",
+    "salePointFormat": "Универсальный",
+    "suoAvailability": "Y",
+    "hasRamp": "N",
+    "latitude": 55.760258,
+    "longitude": 37.611446,
+    "metroStation": "Москва, Сокольническая линия, метро Охотный Ряд",
+    "distance": 886,
+    "kep": true,
+    "myBranch": false
+  },
+  {
+    "userDistance": 0.09627443931521754,
+    "salePointName": "ДО «Кузнецкий мост» Филиала № 7701 Банка ВТБ (ПАО)",
+    "address": "107031, г. Москва, ул. Рождественка, д. 8/15, стр. 3",
+    "status": "открытая",
+    "openHours": [
+      {
+        "days": "Не обслуживает ЮЛ",
+        "hours": null
+      }
+    ],
+    "rko": "нет РКО",
+    "openHoursIndividual": [
+      {
+        "days": "пн",
+        "hours": "10:00-19:00"
+      },
+      {
+        "days": "вт",
+        "hours": "10:00-19:00"
+      },
+      {
+        "days": "ср",
+        "hours": "10:00-19:00"
+      },
+      {
+        "days": "чт",
+        "hours": "10:00-19:00"
+      },
+      {
+        "days": "пт",
+        "hours": "10:00-19:00"
+      },
+      {
+        "days": "сб",
+        "hours": "выходной"
+      },
+      {
+        "days": "вс",
+        "hours": "выходной"
+      }
+    ],
+    "officeType": "Да (Офис Привилегия)",
+    "salePointFormat": "Привилегия (РБ)",
+    "suoAvailability": "N",
+    "hasRamp": "Y",
+    "latitude": 55.762398,
+    "longitude": 37.623951,
+    "metroStation": "Москва, Таганско-Краснопресненская линия, метро Кузнецкий Мост",
+    "distance": 950,
+    "kep": false,
+    "myBranch": false
+  },
+  {
+    "userDistance": 0.09676564291865247,
+    "salePointName": "ДО «Тургеневский» Филиала в г. Москве",
+    "address": "107031, г. Москва, ул. Кузнецкий Мост, д. 17, стр. 1",
+    "status": "открытая",
+    "openHours": [
+      {
+        "days": "пн",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "вт",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "ср",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "чт",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "пт",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "сб",
+        "hours": "выходной"
+      },
+      {
+        "days": "вс",
+        "hours": "выходной"
+      }
+    ],
+    "rko": "нет РКО",
+    "openHoursIndividual": [
+      {
+        "days": "Не обслуживает ФЛ",
+        "hours": null
+      }
+    ],
+    "officeType": "нет",
+    "salePointFormat": "Корпоративный",
+    "suoAvailability": "N",
+    "hasRamp": "N",
+    "latitude": 55.762272,
+    "longitude": 37.624821,
+    "metroStation": "Москва, Таганско-Краснопресненская линия, метро Кузнецкий Мост",
+    "distance": 950,
+    "kep": false,
+    "myBranch": false
+  },
+  {
+    "userDistance": 0.09676564291865247,
+    "salePointName": "ДО №3 «Тургеневский» Банка ВТБ (ПАО)",
+    "address": "107031, г. Москва, ул. Кузнецкий Мост, д. 17, стр. 1",
+    "status": "открытая",
+    "openHours": [
+      {
+        "days": "пн",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "вт",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "ср",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "чт",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "пт",
+        "hours": "09:00-17:00"
+      },
+      {
+        "days": "сб",
+        "hours": "выходной"
+      },
+      {
+        "days": "вс",
+        "hours": "выходной"
+      }
+    ],
+    "rko": "нет РКО",
+    "openHoursIndividual": [
+      {
+        "days": "Не обслуживает ФЛ",
+        "hours": null
+      }
+    ],
+    "officeType": "Нет",
+    "salePointFormat": "Корпоративный",
+    "suoAvailability": "N",
+    "hasRamp": "N",
+    "latitude": 55.762272,
+    "longitude": 37.624821,
+    "metroStation": "Москва, Таганско-Краснопресненская линия, метро Кузнецкий Мост",
+    "distance": 950,
+    "kep": false,
+    "myBranch": false
+  },
+  {
+    "userDistance": 0.09676564291865247,
+    "salePointName": "ДО «Рождественка» Филиала № 7701 Банка ВТБ (ПАО)",
+    "address": "107031, г. Москва, ул. Кузнецкий Мост, д. 17, стр. 1",
+    "status": "открытая",
+    "openHours": [
+      {
+        "days": "пн",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "вт",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "ср",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "чт",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "пт",
+        "hours": "09:00-17:00"
+      },
+      {
+        "days": "сб",
+        "hours": "выходной"
+      },
+      {
+        "days": "вс",
+        "hours": "выходной"
+      }
+    ],
+    "rko": "нет РКО",
+    "openHoursIndividual": [
+      {
+        "days": "Не обслуживает ФЛ",
+        "hours": null
+      }
+    ],
+    "officeType": "Да",
+    "salePointFormat": "Корпоративный",
+    "suoAvailability": "N",
+    "hasRamp": "N",
+    "latitude": 55.762272,
+    "longitude": 37.624821,
+    "metroStation": "Москва, Таганско-Краснопресненская линия, метро Кузнецкий Мост",
+    "distance": 950,
+    "kep": false,
+    "myBranch": false
+  },
+  {
+    "userDistance": 0.09676564291865247,
+    "salePointName": "ДО «Центральный» в г. Москве Филиала № 7701 Банка ВТБ (ПАО)",
+    "address": "107031, г. Москва, ул. Кузнецкий Мост, д. 17, стр. 1",
+    "status": "открытая",
+    "openHours": [
+      {
+        "days": "пн",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "вт",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "ср",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "чт",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "пт",
+        "hours": "09:00-17:00"
+      },
+      {
+        "days": "сб",
+        "hours": "выходной"
+      },
+      {
+        "days": "вс",
+        "hours": "выходной"
+      }
+    ],
+    "rko": "есть РКО",
+    "openHoursIndividual": [
+      {
+        "days": "пн",
+        "hours": "09:00-20:00"
+      },
+      {
+        "days": "вт",
+        "hours": "09:00-20:00"
+      },
+      {
+        "days": "ср",
+        "hours": "09:00-20:00"
+      },
+      {
+        "days": "чт",
+        "hours": "09:00-20:00"
+      },
+      {
+        "days": "пт",
+        "hours": "09:00-20:00"
+      },
+      {
+        "days": "сб",
+        "hours": "выходной"
+      },
+      {
+        "days": "вс",
+        "hours": "выходной"
+      }
+    ],
+    "officeType": "Да",
+    "salePointFormat": "Универсальный",
+    "suoAvailability": "Y",
+    "hasRamp": "Y",
+    "latitude": 55.762272,
+    "longitude": 37.624821,
+    "metroStation": "Москва, Таганско-Краснопресненская линия, метро Кузнецкий Мост",
+    "distance": 950,
+    "kep": false,
+    "myBranch": false
+  },
+  {
+    "userDistance": 0.09676564291865247,
+    "salePointName": "Филиал № 7701 Банка ВТБ (ПАО)",
+    "address": "107031, г. Москва, ул. Кузнецкий Мост, д. 17, стр. 1",
+    "status": "открытая",
+    "openHours": [
+      {
+        "days": "Не обслуживает ЮЛ",
+        "hours": null
+      }
+    ],
+    "rko": null,
+    "network": null,
+    "openHoursIndividual": [
+      {
+        "days": "Не обслуживает ФЛ",
+        "hours": null
+      }
+    ],
+    "officeType": "Нет",
+    "salePointFormat": "Универсальный",
+    "suoAvailability": null,
+    "hasRamp": null,
+    "latitude": 55.762272,
+    "longitude": 37.624821,
+    "metroStation": "Кузнецкий мост (Таганско-Краснопресненская линия)",
+    "distance": 950,
+    "kep": null,
+    "myBranch": false
+  },
+  {
+    "userDistance": 0.07652873299787227,
+    "salePointName": "ДО «Воздвиженка» Филиала № 7701 Банка ВТБ (ПАО)",
+    "address": "119019, г. Москва, ул. Воздвиженка, д. 9",
+    "status": "открытая",
+    "openHours": [
+      {
+        "days": "пн",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "вт",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "ср",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "чт",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "пт",
+        "hours": "09:00-17:00"
+      },
+      {
+        "days": "сб",
+        "hours": "выходной"
+      },
+      {
+        "days": "вс",
+        "hours": "выходной"
+      }
+    ],
+    "rko": "есть РКО",
+    "openHoursIndividual": [
+      {
+        "days": "пн",
+        "hours": "09:00-20:00"
+      },
+      {
+        "days": "вт",
+        "hours": "09:00-20:00"
+      },
+      {
+        "days": "ср",
+        "hours": "09:00-20:00"
+      },
+      {
+        "days": "чт",
+        "hours": "09:00-20:00"
+      },
+      {
+        "days": "пт",
+        "hours": "09:00-20:00"
+      },
+      {
+        "days": "сб",
+        "hours": "выходной"
+      },
+      {
+        "days": "вс",
+        "hours": "выходной"
+      }
+    ],
+    "officeType": "Да (Зона Привилегия)",
+    "salePointFormat": "Универсальный",
+    "suoAvailability": "Y",
+    "hasRamp": "Y",
+    "latitude": 55.75259,
+    "longitude": 37.604752,
+    "metroStation": "Москва, Арбатско-Покровская линия, метро Арбатская",
+    "distance": 994,
+    "kep": false,
+    "myBranch": false
+  },
+  {
+    "userDistance": 0.09683609034166749,
+    "salePointName": "Филиал «Центральный» Банка ВТБ (ПАО)",
+    "address": "107031, г. Москва, ул. Рождественка, д. 10/2, стр. 1",
+    "status": "открытая",
+    "openHours": [
+      {
+        "days": "Не обслуживает ЮЛ",
+        "hours": null
+      }
+    ],
+    "rko": "нет РКО",
+    "openHoursIndividual": [
+      {
+        "days": "Не обслуживает ФЛ",
+        "hours": null
+      }
+    ],
+    "officeType": "Нет",
+    "salePointFormat": "Филиал",
+    "suoAvailability": "N",
+    "hasRamp": "N",
+    "latitude": 55.763264,
+    "longitude": 37.623825,
+    "metroStation": "Москва, Таганско-Краснопресненская линия, метро Кузнецкий Мост",
+    "distance": 1042,
+    "kep": false,
+    "myBranch": false
+  },
+  {
+    "userDistance": 0.08611621983029766,
+    "salePointName": "ДО «Тверская,13» Филиала № 7701 Банка ВТБ (ПАО)",
+    "address": "103032, г. Москва, ул. Тверская, д. 13",
+    "status": "открытая",
+    "openHours": [
+      {
+        "days": "Не обслуживает ЮЛ",
+        "hours": null
+      }
+    ],
+    "rko": "нет РКО",
+    "openHoursIndividual": [
+      {
+        "days": "пн",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "вт",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "ср",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "чт",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "пт",
+        "hours": "09:00-16:45"
+      },
+      {
+        "days": "сб",
+        "hours": "выходной"
+      },
+      {
+        "days": "вс",
+        "hours": "выходной"
+      }
+    ],
+    "officeType": "нет",
+    "salePointFormat": "Розничный (РБ)",
+    "suoAvailability": "N",
+    "hasRamp": "N",
+    "latitude": 55.761257,
+    "longitude": 37.609119,
+    "metroStation": "Москва, Замоскворецкая линия, метро Тверская",
+    "distance": 1065,
+    "kep": false,
+    "myBranch": false
+  },
+  {
+    "userDistance": 0.10000240503438086,
+    "salePointName": "ДО «Лубянский» Филиала в г. Москве",
+    "address": "101000, г. Москва, ул. Большая Лубянка, д. 16, стр. 1",
+    "status": "открытая",
+    "openHours": [
+      {
+        "days": "пн",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "вт",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "ср",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "чт",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "пт",
+        "hours": "09:00-17:00"
+      },
+      {
+        "days": "сб",
+        "hours": "выходной"
+      },
+      {
+        "days": "вс",
+        "hours": "выходной"
+      }
+    ],
+    "rko": "есть РКО",
+    "openHoursIndividual": [
+      {
+        "days": "Не обслуживает ФЛ",
+        "hours": null
+      }
+    ],
+    "officeType": "Да",
+    "salePointFormat": "Корпоративный",
+    "suoAvailability": "N",
+    "hasRamp": "N",
+    "latitude": 55.762936,
+    "longitude": 37.628845,
+    "metroStation": "Москва, Таганско-Краснопресненская линия, метро Кузнецкий Мост",
+    "distance": 1116,
+    "kep": true,
+    "myBranch": false
+  },
+  {
+    "userDistance": 0.10000240503438086,
+    "salePointName": "ДО «Лубянский» Филиала № 7701 Банка ВТБ (ПАО)",
+    "address": "101000, г. Москва, ул. Большая Лубянка, д. 16, стр. 1",
+    "status": "открытая",
+    "openHours": [
+      {
+        "days": "Не обслуживает ЮЛ",
+        "hours": null
+      }
+    ],
+    "rko": "нет РКО",
+    "openHoursIndividual": [
+      {
+        "days": "пн",
+        "hours": "09:00-19:00"
+      },
+      {
+        "days": "вт",
+        "hours": "09:00-19:00"
+      },
+      {
+        "days": "ср",
+        "hours": "09:00-19:00"
+      },
+      {
+        "days": "чт",
+        "hours": "09:00-19:00"
+      },
+      {
+        "days": "пт",
+        "hours": "09:00-19:00"
+      },
+      {
+        "days": "сб",
+        "hours": "выходной"
+      },
+      {
+        "days": "вс",
+        "hours": "выходной"
+      }
+    ],
+    "officeType": "Да (Зона Привилегия)",
+    "salePointFormat": "Розничный (РБ)",
+    "suoAvailability": "Y",
+    "hasRamp": "N",
+    "latitude": 55.762936,
+    "longitude": 37.628845,
+    "metroStation": "Москва, Таганско-Краснопресненская линия, метро Кузнецкий Мост",
+    "distance": 1116,
+    "kep": false,
+    "myBranch": false
+  },
+  {
+    "userDistance": 0.10000240503438086,
+    "salePointName": "ДО № 26 «Лубянский» Банка ВТБ (ПАО)",
+    "address": "101000, г. Москва, ул. Большая Лубянка, д. 16, стр. 1",
+    "status": "открытая",
+    "openHours": [
+      {
+        "days": "пн",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "вт",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "ср",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "чт",
+        "hours": "09:00-18:00"
+      },
+      {
+        "days": "пт",
+        "hours": "09:00-17:00"
+      },
+      {
+        "days": "сб",
+        "hours": "выходной"
+      },
+      {
+        "days": "вс",
+        "hours": "выходной"
+      }
+    ],
+    "rko": null,
+    "openHoursIndividual": [
+      {
+        "days": "Не обслуживает ФЛ",
+        "hours": null
+      }
+    ],
+    "officeType": "Нет",
+    "salePointFormat": "Корпоративный",
+    "suoAvailability": "N",
+    "hasRamp": "N",
+    "latitude": 55.762936,
+    "longitude": 37.628845,
+    "metroStation": "Москва, Таганско-Краснопресненская линия, метро Кузнецкий Мост",
+    "distance": 1116,
+    "kep": false,
+    "myBranch": false
+  },
+  {
+    "userDistance": 0.0871198567323177,
+    "salePointName": "ДО «Тверская, 8» Филиала № 7701 Банка ВТБ (ПАО)",
+    "address": "103009, г. Москва, ул. Тверская, д. 8, стр. 1",
+    "status": "открытая",
+    "openHours": [
+      {
+        "days": "пн",
+        "hours": "10:00-19:00"
+      },
+      {
+        "days": "вт",
+        "hours": "10:00-19:00"
+      },
+      {
+        "days": "ср",
+        "hours": "10:00-19:00"
+      },
+      {
+        "days": "чт",
+        "hours": "10:00-19:00"
+      },
+      {
+        "days": "пт",
+        "hours": "10:00-18:00"
+      },
+      {
+        "days": "сб",
+        "hours": "выходной"
+      },
+      {
+        "days": "вс",
+        "hours": "выходной"
+      }
+    ],
+    "rko": "есть РКО",
+    "openHoursIndividual": [
+      {
+        "days": "пн",
+        "hours": "10:00-19:00"
+      },
+      {
+        "days": "вт",
+        "hours": "10:00-19:00"
+      },
+      {
+        "days": "ср",
+        "hours": "10:00-19:00"
+      },
+      {
+        "days": "чт",
+        "hours": "10:00-19:00"
+      },
+      {
+        "days": "пт",
+        "hours": "10:00-19:00"
+      },
+      {
+        "days": "сб",
+        "hours": "выходной"
+      },
+      {
+        "days": "вс",
+        "hours": "выходной"
+      }
+    ],
+    "officeType": "Да (Зона Привилегия)",
+    "salePointFormat": "Универсальный",
+    "suoAvailability": "Y",
+    "hasRamp": "Y",
+    "latitude": 55.762119,
+    "longitude": 37.609638,
+    "metroStation": "Москва, Замоскворецкая линия, метро Тверская",
+    "distance": 1118,
+    "kep": true,
+    "myBranch": false
+  }
+]
