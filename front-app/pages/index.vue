@@ -19,6 +19,7 @@
             </v-icon>
           </l-icon>
         </l-marker>
+        <v-marker-cluster>
         <l-marker
           v-for="(item, idx) in officeList"
           :key="`office-${idx}`"
@@ -41,6 +42,7 @@
             </l-icon>
           </l-marker>
         </template>
+        </v-marker-cluster>
       </l-map>
     </div>
     <div class="actions-wrapper pa-3">
@@ -96,10 +98,12 @@
 <script>
 import { latLng } from "leaflet";
 import {LMap, LMarker, LTileLayer, LIcon} from 'vue2-leaflet';
+import Vue2LeafletMarkerCluster from 'vue2-leaflet-markercluster'
 
 export default {
   name: 'IndexPage',
   components: {
+    'v-marker-cluster': Vue2LeafletMarkerCluster,
     LMap,
     LTileLayer,
     LMarker,
@@ -126,12 +130,14 @@ export default {
         this.officeList = res.offices;
         this.atmList = res.atms;
       })
-    if (this.$route.query?.name && this.$route.query?.userType) {
+    if (this.$store.state.name && this.$store.state.userType) {
       this.$axios.$post('api/get-offices', {
-        service: this.$route.query.name,
-        userType: this.$route.query.userType
+        service: this.$store.state.name,
+        userType: this.$store.state.userType
       }).then(res => {
-        console.log(res)
+        this.filtersOfficeList = res.offices
+        this.$store.commit('name',null)
+        this.$store.commit('userType', null)
       })
     }
   },

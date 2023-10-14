@@ -41,7 +41,6 @@
             :items="serviceList"
             :search="search"
             @click:row="setFilter($event)"
-            height="100%"
           ></v-data-table>
         </template>
       </v-container>
@@ -58,6 +57,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'ServicePage',
   data() {
@@ -90,7 +90,9 @@ export default {
       this.selectService = name
     },
     goMain() {
-      this.$router.push(`/?name=${this.selectService}&userType=${this.selectType}`)
+      this.$store.commit('name',this.selectService)
+      this.$store.commit('userType', this.selectType)
+      this.$router.push(`/`)
     }
   }
 }
