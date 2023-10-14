@@ -2,7 +2,12 @@
   <div class="base-wrapper">
     <div class="map">
       <div class="atm-switcher black rounded-xl pt-1 pb-1 pr-2 pl-2">
-        <v-switch v-model="atmsStatus" class="ma-0 pt-0" hide-details label="ATM" />
+        <v-switch
+          v-model="atmsStatus"
+          class="ma-0 pt-0"
+          hide-details
+          label="ATM"
+        />
       </div>
       <l-map
         style="height: 100%; width: 100%"
@@ -14,30 +19,30 @@
         <l-tile-layer :url="url" />
         <l-marker :lat-lng="center" />
         <v-marker-cluster>
-        <l-marker
-          v-for="(item, idx) in officeList"
-          :key="`office-${idx}`"
-          :lat-lng="[item.latitude, item.longitude]">
-          <l-icon>
-            <v-icon large color="blue" class="darken-2">
-              mdi-circle
-            </v-icon>
-          </l-icon>
-        </l-marker>
-        <template v-if="atmsStatus">
           <l-marker
-            v-for="(item, idx) in atmList"
-            :key="`atm-${idx}`"
-            :lat-lng="[item.latitude, item.longitude]">
+            v-for="(item, idx) in officeList"
+            :key="`office-${idx}`"
+            :lat-lng="[item.latitude, item.longitude]"
+          >
             <l-icon>
-              <v-icon large color="blue" class="text--accent-3">
-                mdi-circle
-              </v-icon>
+              <v-icon large color="blue" class="darken-2"> mdi-circle </v-icon>
             </l-icon>
           </l-marker>
-        </template>
+          <template v-if="atmsStatus">
+            <l-marker
+              v-for="(item, idx) in atmList"
+              :key="`atm-${idx}`"
+              :lat-lng="[item.latitude, item.longitude]"
+            >
+              <l-icon>
+                <v-icon large color="blue" class="text--accent-3">
+                  mdi-circle
+                </v-icon>
+              </l-icon>
+            </l-marker>
+          </template>
         </v-marker-cluster>
-        <l-routing-machine v-if="officeList.length" :waypoints="getWaypoints"/>
+        <l-routing-machine v-if="officeList.length" :waypoints="getWaypoints" />
       </l-map>
     </div>
     <div class="actions-wrapper pa-3">
@@ -52,18 +57,7 @@
         Выбрать услугу
       </v-btn>
       <v-divider class="mt-3 mb-3 grey lighten-2"></v-divider>
-      <div v-if="officeList.length" class="points-preview">
-        <v-card
-          v-for="(point, idx) in [officeList[0], officeList[1]]"
-          :key="`${idx}-pt`"
-          width="50%"
-          flat
-          :height="120"
-          class="white grey lighten-3 overflow-hidden black--text"
-        >
-          {{point.address || ''}}
-        </v-card>
-      </div>
+      <BankCards :offices="officeList" />
       <v-divider class="mt-3 mb-3 grey lighten-2"></v-divider>
       <v-btn
         outlined
@@ -92,10 +86,10 @@
 
 <script>
 import { latLng } from 'leaflet'
-import {LMap, LMarker, LTileLayer, LIcon} from 'vue2-leaflet'
+import { LMap, LMarker, LTileLayer, LIcon } from 'vue2-leaflet'
 import Vue2LeafletMarkerCluster from 'vue2-leaflet-markercluster'
+import BankCards from '../components/cards/BankCards.vue'
 import LRM from '@/components/LRM'
-
 
 export default {
   name: 'IndexPage',
@@ -105,7 +99,8 @@ export default {
     LMap,
     LTileLayer,
     LMarker,
-    LIcon
+    LIcon,
+    BankCards,
   },
   data() {
     return {
@@ -117,54 +112,55 @@ export default {
       zoom: 11,
       bounds: null,
       officeList: [],
-      filtersOfficeList:[],
+      filtersOfficeList: [],
       atmList: [],
       currentPint: null,
     }
   },
   fetch() {
-    this.$axios.$get('api/get-map-items')
-      .then(res => {
-        this.officeList = res.offices.reverse();
-        this.atmList = res.atms;
-      })
+    this.$axios.$get('api/get-map-items').then((res) => {
+      this.officeList = res.offices.reverse()
+      this.atmList = res.atms
+    })
     if (this.$store.state.name && this.$store.state.userType) {
-      this.$axios.$post('api/get-offices', {
-        service: this.$store.state.name,
-        userType: this.$store.state.userType
-      }).then(res => {
-        this.filtersOfficeList = res.offices
-        this.$store.commit('name',null)
-        this.$store.commit('userType', null)
-      })
+      this.$axios
+        .$post('api/get-offices', {
+          service: this.$store.state.name,
+          userType: this.$store.state.userType,
+        })
+        .then((res) => {
+          this.filtersOfficeList = res.offices
+          this.$store.commit('name', null)
+          this.$store.commit('userType', null)
+        })
     }
   },
   created() {
     const success = (position) => {
-      this.latitude  = position.coords.latitude;
-      this.longitude = position.coords.longitude;
-    };
+      this.latitude = position.coords.latitude
+      this.longitude = position.coords.longitude
+    }
     const error = (err) => {
-      console.log(err);
-    };
-    navigator.geolocation.getCurrentPosition(success, error);
+      console.log(err)
+    }
+    navigator.geolocation.getCurrentPosition(success, error)
   },
   computed: {
     getWaypoints() {
       return [
-        {...this.center},
-        {lat: this.officeList[0].latitude, lng: this.officeList[0].longitude}
+        { ...this.center },
+        { lat: this.officeList[0].latitude, lng: this.officeList[0].longitude },
       ]
-    }
+    },
   },
   methods: {
-    zoomUpdated (zoom) {
-      this.zoom = zoom;
+    zoomUpdated(zoom) {
+      this.zoom = zoom
     },
     centerUpdate(center) {
-      this.currentCenter = center;
+      this.currentCenter = center
     },
-  }
+  },
 }
 </script>
 <style scoped lang="scss">
