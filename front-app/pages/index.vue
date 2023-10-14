@@ -1,17 +1,47 @@
 <template>
   <div class="base-wrapper">
     <div class="map">
-      <yandex-map
-        :coords="[latitude, longitude]"
-        :zoom="8"
-        style="width: 100%; height: 100%;"
+      <div class="atm-switcher black rounded-xl pt-1 pb-1 pr-2 pl-2">
+        <v-switch v-model="atmsStatus" class="ma-0 pt-0" hide-details label="ATM" />
+      </div>
+      <l-map
+        style="height: 100%; width: 100%"
+        :zoom="zoom"
+        :center="currentCenter"
+        @update:center="centerUpdate"
+        @update:zoom="zoomUpdated"
       >
-        <ymap-marker
-          marker-id="123"
-          :coords="[latitude, longitude]"
-          hint-content="some hint"
-        />
-      </yandex-map>
+        <l-tile-layer :url="url"></l-tile-layer>
+        <l-marker :lat-lng="center">
+          <l-icon>
+            <v-icon large color="blue" class="darken-2">
+              mdi-map-marker
+            </v-icon>
+          </l-icon>
+        </l-marker>
+        <l-marker
+          v-for="(item, idx) in officeList"
+          :key="`office-${idx}`"
+          :lat-lng="[item.latitude, item.longitude]">
+          <l-icon>
+            <v-icon large color="blue" class="darken-2">
+              mdi-circle
+            </v-icon>
+          </l-icon>
+        </l-marker>
+        <template v-if="atmsStatus">
+          <l-marker
+            v-for="(item, idx) in atmList"
+            :key="`atm-${idx}`"
+            :lat-lng="[item.latitude, item.longitude]">
+            <l-icon>
+              <v-icon large color="blue" class="text--accent-3">
+                mdi-circle
+              </v-icon>
+            </l-icon>
+          </l-marker>
+        </template>
+      </l-map>
     </div>
     <div class="actions-wrapper pa-3">
       <v-btn
@@ -25,15 +55,16 @@
         Выбрать услугу
       </v-btn>
       <v-divider class="mt-3 mb-3 grey lighten-2"></v-divider>
-      <div class="points-preview">
+      <div v-if="officeList.length" class="points-preview">
         <v-card
-          v-for="point in 2"
-          :key="`${point}-pt`"
+          v-for="(point, idx) in [officeList[0], officeList[1]]"
+          :key="`${idx}-pt`"
           width="50%"
           flat
           :height="120"
-          class="white grey lighten-3"
+          class="white grey lighten-3 overflow-hidden black--text"
         >
+          {{point.address || ''}}
         </v-card>
       </div>
       <v-divider class="mt-3 mb-3 grey lighten-2"></v-divider>
@@ -57,32 +88,56 @@
 </template>
 
 <script>
-
-import {yandexMap, ymapMarker} from "vue-yandex-maps";
+import { latLng } from "leaflet";
+import {LMap, LMarker, LTileLayer, LIcon} from 'vue2-leaflet';
 
 export default {
   name: 'IndexPage',
   components: {
-    yandexMap,
-    ymapMarker
+    LMap,
+    LTileLayer,
+    LMarker,
+    LIcon
   },
   data() {
     return {
-      latitude: 0,
-      longitude: 0,
+      atmsStatus: false,
+      currentCenter: latLng(55.6908465, 37.5595371),
+      center: latLng(55.6908465, 37.5595371),
       searchModal: false,
+      url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      zoom: 11,
+      bounds: null,
+      officeList: [],
+      atmList: [],
+      currentPint: null,
     }
+  },
+  fetch() {
+    this.$axios.$get('/api/get-map-items')
+      .then(res => {
+        console.log(res.offices);
+        this.officeList = res.offices;
+        this.atmList = res.atms;
+      })
   },
   created() {
     const success = (position) => {
       this.latitude  = position.coords.latitude;
       this.longitude = position.coords.longitude;
     };
-
     const error = (err) => {
-      console.log(err)
+      console.log(err);
     };
     navigator.geolocation.getCurrentPosition(success, error);
+  },
+  methods: {
+    zoomUpdated (zoom) {
+      this.zoom = zoom;
+    },
+    centerUpdate(center) {
+      this.currentCenter = center;
+    },
   }
 }
 </script>
@@ -94,7 +149,13 @@ export default {
   grid-template-columns: 100%;
   grid-template-rows: 4fr 3fr;
   .map {
-
+    position: relative;
+    .atm-switcher {
+      z-index: 1000;
+      position: absolute;
+      top: 14px;
+      right: 60px;
+    }
   }
   .actions-wrapper {
     position: relative;
