@@ -90,12 +90,10 @@ const outputOffices = officesData.map((officeData) => {
   return {
     ...officeData,
     servicesListLegal:
-      LEGAL_SERVICES_ARRAY[
-        Math.floor(Math.random() * LEGAL_SERVICES_ARRAY.length)
-      ],
+      LEGAL_SERVICES_ARRAY[Math.floor(Math.random() * LEGAL_SERVICES_ARRAY)],
     servicesListIndividual:
       INDIVIDUAL_SERVICES_ARRAY[
-        Math.floor(Math.random() * INDIVIDUAL_SERVICES_ARRAY.length)
+        Math.floor(Math.random() * INDIVIDUAL_SERVICES_ARRAY)
       ],
   };
 });

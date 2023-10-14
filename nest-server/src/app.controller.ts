@@ -105,8 +105,8 @@ export class AppController {
               userDistance: Math.sqrt(
                 // (body.coordinates.latitude + body.coordinates.longitude) ** 2 +
                 //   (office.latitude + office.longitude) ** 2,
-                (USER_COORDS.latitude + USER_COORDS.longitude) ** 2 +
-                  (office.latitude + office.longitude) ** 2,
+                (USER_COORDS.latitude - office.latitude) ** 2 +
+                  (USER_COORDS.longitude - office.longitude) ** 2,
               ),
             };
           })
@@ -114,7 +114,7 @@ export class AppController {
             return a.userDistance - b.userDistance;
           });
 
-        filteredAndSortedOffices.length = 20;
+        filteredAndSortedOffices.splice(0, 10);
 
         const outputOffices = filteredAndSortedOffices.map((office) => {
           if (body.isPrivileged) {
@@ -159,8 +159,8 @@ export class AppController {
               userDistance: Math.sqrt(
                 // (body.coordinates.latitude + body.coordinates.longitude) ** 2 +
                 //   (office.latitude + office.longitude) ** 2,
-                (USER_COORDS.latitude + USER_COORDS.longitude) ** 2 +
-                  (office.latitude + office.longitude) ** 2,
+                (USER_COORDS.latitude - office.latitude) ** 2 +
+                  (USER_COORDS.longitude - office.longitude) ** 2,
               ),
             };
           })
@@ -168,7 +168,7 @@ export class AppController {
             return a.userDistance - b.userDistance;
           });
 
-        filteredAndSortedOffices.length = 20;
+        filteredAndSortedOffices.splice(0, 10);
 
         const outputOffices = filteredAndSortedOffices.map((office) => {
           return {
