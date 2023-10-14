@@ -10,9 +10,12 @@ import { AppService } from './app.service';
 import * as fs from 'fs';
 import { IOffice } from './types/office';
 import { IAtm } from './types/atm';
+import { INDIVIDUAL_SERVICES, LEGAL_SERVICES } from './constants';
 
 const USER_COORDS = { latitude: 55.6908465, longitude: 37.5595371 };
 const RISK_MULTIPLIER = 1.15;
+const currentDate = new Date('2023-10-11T08:00:13.071Z');
+const TICK_HOURS_DELTA = 6;
 
 class GetSuitableOfficesDto {
   service: string;
@@ -37,7 +40,88 @@ export class AppController {
     }),
   ) as IAtm[];
 
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: AppService) {
+    setInterval(() => {
+      const currentHours = currentDate.getHours();
+      const currentWeekDay = currentDate.getDay();
+
+      currentDate.setHours(currentHours + TICK_HOURS_DELTA);
+
+      this.offices = this.offices.map((office) => {
+        const officeHours =
+          currentWeekDay === 0 || currentWeekDay === 6
+            ? office.openHoursIndividual.weekends
+            : office.openHoursIndividual.workingDays;
+
+        if (
+          Object.keys(officeHours.averageTraffic).includes(`${currentHours}`)
+        ) {
+          const officeTraffic = officeHours.averageTraffic[currentHours];
+          const queueIndividual = officeTraffic
+            ? Array(Math.floor(Math.random() * officeTraffic * 2))
+                .fill(null)
+                .map(
+                  () =>
+                    INDIVIDUAL_SERVICES[
+                      Math.floor(Math.random() * INDIVIDUAL_SERVICES.length)
+                    ],
+                )
+            : [];
+
+          if (office.isLegalServing) {
+            const queueLegal = officeTraffic
+              ? Array(Math.floor(Math.random() * officeTraffic * 0.8))
+                  .fill(null)
+                  .map(
+                    () =>
+                      LEGAL_SERVICES[
+                        Math.floor(Math.random() * LEGAL_SERVICES.length)
+                      ],
+                  )
+              : [];
+            return {
+              ...office,
+              queueIndividual,
+              queueLegal,
+              queueIndividualPrivileged: [],
+            };
+          }
+
+          if (office.isPrivilegedServed) {
+            const queueIndividualPrivileged = officeTraffic
+              ? Array(Math.floor(Math.random() * officeTraffic * 0.3))
+                  .fill(null)
+                  .map(
+                    () =>
+                      INDIVIDUAL_SERVICES[
+                        Math.floor(Math.random() * INDIVIDUAL_SERVICES.length)
+                      ],
+                  )
+              : [];
+            return {
+              ...office,
+              queueIndividual,
+              queueIndividualPrivileged,
+              queueLegal: [],
+            };
+          }
+
+          return {
+            ...office,
+            queueIndividual,
+            queueIndividualPrivileged: [],
+            queueLegal: [],
+          };
+        }
+        return {
+          ...office,
+          queueIndividual: [],
+          queueIndividualPrivileged: [],
+          queueLegal: [],
+        };
+      });
+    }, 5000);
+  }
 
   @Get()
   healthChecker(): string {
@@ -55,34 +139,8 @@ export class AppController {
   @Get('/api/get-services')
   getServices() {
     return {
-      individual: [
-        {
-          name: 'Оплата счетов и коммунальных услуг',
-          averageTime: 7,
-        },
-        {
-          name: 'Выпуск и обслуживание банковских карт (дебетовых и кредитных)',
-          averageTime: 4,
-        },
-        {
-          name: 'Потребительские кредиты (на личные нужды)',
-          averageTime: 11,
-        },
-      ],
-      legal: [
-        {
-          name: 'Расчетно-кассовое обслуживание',
-          averageTime: 15,
-        },
-        {
-          name: 'Документарные операции',
-          averageTime: 21,
-        },
-        {
-          name: 'Эквайринг',
-          averageTime: 13,
-        },
-      ],
+      individual: INDIVIDUAL_SERVICES,
+      legal: LEGAL_SERVICES,
     };
   }
 
@@ -92,12 +150,25 @@ export class AppController {
       body.service &&
       (body.userType === 'individual' || body.userType === 'legal')
     ) {
+      const currentHours = currentDate.getHours();
+      const currentWeekDay = currentDate.getDay();
+
       if (body.userType === 'individual') {
         const filteredAndSortedOffices = this.offices
           .filter((office) =>
-            office.servicesListIndividual.some(
-              (officeService) => officeService.name === body.service,
-            ),
+            office.servicesListIndividual.some((officeService) => {
+              const officeHours =
+                currentWeekDay === 0 || currentWeekDay === 6
+                  ? office.openHoursIndividual.weekends
+                  : office.openHoursIndividual.workingDays;
+
+              return (
+                officeService.name === body.service &&
+                Object.keys(officeHours.averageTraffic).includes(
+                  `${currentHours}`,
+                )
+              );
+            }),
           )
           .map((office) => {
             return {

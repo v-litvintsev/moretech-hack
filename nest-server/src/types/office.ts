@@ -1,4 +1,4 @@
-import { IOpenHoursItem } from './common';
+import { IOpenHours } from './common';
 
 interface IService {
   name: string;
@@ -13,8 +13,8 @@ export interface IOffice {
   longitude: number;
   address: string;
   isWorksAllDay: boolean;
-  openHoursForLegal: IOpenHoursItem[]; // Режим работы для юр лиц
-  openHoursForIndividual: IOpenHoursItem[]; // Режим работы для физ лиц
+  openHoursLegal: IOpenHours; // Режим работы для юр лиц
+  openHoursIndividual: IOpenHours; // Режим работы для физ лиц
   windowsLegal: number;
   windowsIndividual: number;
   windowsIndividualPrivileged: number;

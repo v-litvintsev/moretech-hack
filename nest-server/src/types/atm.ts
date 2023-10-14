@@ -1,4 +1,4 @@
-import { IOpenHoursItem } from './common';
+import { IOpenHours } from './common';
 
 interface IAtmService {
   serviceCapability: 'UNKNOWN' | 'SUPPORTED' | 'UNSUPPORTED';
@@ -10,7 +10,7 @@ export interface IAtm {
   longitude: number;
   address: string;
   allDay: boolean;
-  openHours: IOpenHoursItem[];
+  openHours: IOpenHours;
   services: {
     wheelchair: IAtmService;
     blind: IAtmService;
