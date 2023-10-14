@@ -1,5 +1,14 @@
 [
   {
+    "windowsIndividual": 3,
+    "windowsLegal": 1,
+    "queueIndividual": [],
+    "queueLegal": [
+      {
+        "name": "Расчетно-кассовое обслуживание",
+        "averageTime": 15
+      }
+    ],
     "isLegalServing": true,
     "isPrivilegedServed": false,
     "servicesListLegal": [
@@ -71,6 +80,67 @@
     "myBranch": false
   },
   {
+    "windowsIndividual": 4,
+    "windowsLegal": 0,
+    "queueIndividual": [
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      }
+    ],
+    "queueLegal": [],
     "isLegalServing": false,
     "isPrivilegedServed": false,
     "servicesListLegal": [],
@@ -137,6 +207,59 @@
     "myBranch": false
   },
   {
+    "windowsIndividual": 4,
+    "windowsLegal": 0,
+    "queueIndividual": [
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      }
+    ],
+    "queueLegal": [],
     "isLegalServing": false,
     "isPrivilegedServed": false,
     "servicesListLegal": [],
@@ -203,6 +326,52 @@
     "myBranch": false
   },
   {
+    "windowsIndividual": 5,
+    "windowsLegal": 1,
+    "queueIndividual": [
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      }
+    ],
+    "queueLegal": [
+      {
+        "name": "Эквайринг",
+        "averageTime": 13
+      },
+      {
+        "name": "Расчетно-кассовое обслуживание",
+        "averageTime": 15
+      }
+    ],
     "isLegalServing": true,
     "isPrivilegedServed": false,
     "servicesListLegal": [
@@ -282,6 +451,63 @@
     "myBranch": false
   },
   {
+    "windowsIndividual": 3,
+    "windowsLegal": 0,
+    "queueIndividual": [
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      }
+    ],
+    "queueLegal": [],
     "isLegalServing": false,
     "isPrivilegedServed": false,
     "servicesListLegal": [],
@@ -348,6 +574,47 @@
     "myBranch": false
   },
   {
+    "windowsIndividual": 4,
+    "windowsLegal": 0,
+    "queueIndividual": [
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      }
+    ],
+    "queueLegal": [],
     "isLegalServing": false,
     "isPrivilegedServed": false,
     "servicesListLegal": [],
@@ -414,6 +681,51 @@
     "myBranch": false
   },
   {
+    "windowsIndividual": 3,
+    "windowsLegal": 0,
+    "queueIndividual": [
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      }
+    ],
+    "queueLegal": [],
     "isLegalServing": false,
     "isPrivilegedServed": false,
     "servicesListLegal": [],
@@ -508,6 +820,15 @@
     "myBranch": false
   },
   {
+    "windowsIndividual": 3,
+    "windowsLegal": 0,
+    "queueIndividual": [
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      }
+    ],
+    "queueLegal": [],
     "isLegalServing": false,
     "isPrivilegedServed": false,
     "servicesListLegal": [],
@@ -578,6 +899,64 @@
     "myBranch": false
   },
   {
+    "windowsIndividual": 3,
+    "windowsLegal": 1,
+    "queueIndividual": [
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      }
+    ],
+    "queueLegal": [
+      {
+        "name": "Эквайринг",
+        "averageTime": 13
+      },
+      {
+        "name": "Расчетно-кассовое обслуживание",
+        "averageTime": 15
+      },
+      {
+        "name": "Документарные операции",
+        "averageTime": 21
+      },
+      {
+        "name": "Расчетно-кассовое обслуживание",
+        "averageTime": 15
+      },
+      {
+        "name": "Расчетно-кассовое обслуживание",
+        "averageTime": 15
+      }
+    ],
     "isLegalServing": true,
     "isPrivilegedServed": false,
     "servicesListLegal": [
@@ -649,6 +1028,59 @@
     "myBranch": false
   },
   {
+    "windowsIndividual": 5,
+    "windowsLegal": 0,
+    "queueIndividual": [
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      }
+    ],
+    "queueLegal": [],
     "isLegalServing": false,
     "isPrivilegedServed": false,
     "servicesListLegal": [],
@@ -719,6 +1151,68 @@
     "myBranch": false
   },
   {
+    "windowsIndividual": 4,
+    "windowsLegal": 1,
+    "queueIndividual": [
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      }
+    ],
+    "queueLegal": [
+      {
+        "name": "Расчетно-кассовое обслуживание",
+        "averageTime": 15
+      },
+      {
+        "name": "Расчетно-кассовое обслуживание",
+        "averageTime": 15
+      },
+      {
+        "name": "Эквайринг",
+        "averageTime": 13
+      },
+      {
+        "name": "Документарные операции",
+        "averageTime": 21
+      },
+      {
+        "name": "Эквайринг",
+        "averageTime": 13
+      },
+      {
+        "name": "Эквайринг",
+        "averageTime": 13
+      }
+    ],
     "isLegalServing": true,
     "isPrivilegedServed": false,
     "servicesListLegal": [
@@ -798,6 +1292,15 @@
     "myBranch": false
   },
   {
+    "windowsIndividual": 4,
+    "windowsLegal": 0,
+    "queueIndividual": [
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      }
+    ],
+    "queueLegal": [],
     "isLegalServing": false,
     "isPrivilegedServed": false,
     "servicesListLegal": [],
@@ -888,6 +1391,60 @@
     "myBranch": false
   },
   {
+    "windowsIndividual": 5,
+    "windowsLegal": 1,
+    "queueIndividual": [
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      }
+    ],
+    "queueLegal": [
+      {
+        "name": "Расчетно-кассовое обслуживание",
+        "averageTime": 15
+      },
+      {
+        "name": "Расчетно-кассовое обслуживание",
+        "averageTime": 15
+      },
+      {
+        "name": "Расчетно-кассовое обслуживание",
+        "averageTime": 15
+      },
+      {
+        "name": "Расчетно-кассовое обслуживание",
+        "averageTime": 15
+      },
+      {
+        "name": "Расчетно-кассовое обслуживание",
+        "averageTime": 15
+      },
+      {
+        "name": "Эквайринг",
+        "averageTime": 13
+      },
+      {
+        "name": "Эквайринг",
+        "averageTime": 13
+      }
+    ],
     "isLegalServing": true,
     "isPrivilegedServed": false,
     "servicesListLegal": [
@@ -944,6 +1501,31 @@
     "myBranch": false
   },
   {
+    "windowsIndividual": 4,
+    "windowsLegal": 0,
+    "queueIndividual": [
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      }
+    ],
+    "queueLegal": [],
     "isLegalServing": false,
     "isPrivilegedServed": false,
     "servicesListLegal": [],
@@ -1038,6 +1620,19 @@
     "myBranch": false
   },
   {
+    "windowsIndividual": 4,
+    "windowsLegal": 1,
+    "queueIndividual": [],
+    "queueLegal": [
+      {
+        "name": "Расчетно-кассовое обслуживание",
+        "averageTime": 15
+      },
+      {
+        "name": "Эквайринг",
+        "averageTime": 13
+      }
+    ],
     "isLegalServing": true,
     "isPrivilegedServed": false,
     "servicesListLegal": [
@@ -1089,6 +1684,55 @@
     "myBranch": false
   },
   {
+    "windowsIndividual": 3,
+    "windowsLegal": 0,
+    "queueIndividual": [
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      }
+    ],
+    "queueLegal": [],
     "isLegalServing": false,
     "isPrivilegedServed": false,
     "servicesListLegal": [],
@@ -1155,6 +1799,31 @@
     "myBranch": false
   },
   {
+    "windowsIndividual": 4,
+    "windowsLegal": 0,
+    "queueIndividual": [
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      }
+    ],
+    "queueLegal": [],
     "isLegalServing": false,
     "isPrivilegedServed": false,
     "servicesListLegal": [],
@@ -1221,6 +1890,72 @@
     "myBranch": false
   },
   {
+    "windowsIndividual": 4,
+    "windowsLegal": 1,
+    "queueIndividual": [
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      }
+    ],
+    "queueLegal": [
+      {
+        "name": "Расчетно-кассовое обслуживание",
+        "averageTime": 15
+      },
+      {
+        "name": "Расчетно-кассовое обслуживание",
+        "averageTime": 15
+      },
+      {
+        "name": "Документарные операции",
+        "averageTime": 21
+      },
+      {
+        "name": "Эквайринг",
+        "averageTime": 13
+      },
+      {
+        "name": "Расчетно-кассовое обслуживание",
+        "averageTime": 15
+      },
+      {
+        "name": "Документарные операции",
+        "averageTime": 21
+      }
+    ],
     "isLegalServing": true,
     "isPrivilegedServed": false,
     "servicesListLegal": [
@@ -1304,6 +2039,19 @@
     "myBranch": false
   },
   {
+    "windowsIndividual": 5,
+    "windowsLegal": 0,
+    "queueIndividual": [
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      }
+    ],
+    "queueLegal": [],
     "isLegalServing": false,
     "isPrivilegedServed": false,
     "servicesListLegal": [],
@@ -1370,6 +2118,51 @@
     "myBranch": false
   },
   {
+    "windowsIndividual": 5,
+    "windowsLegal": 0,
+    "queueIndividual": [
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      }
+    ],
+    "queueLegal": [],
     "isLegalServing": false,
     "isPrivilegedServed": false,
     "servicesListLegal": [],

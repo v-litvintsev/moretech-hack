@@ -6,8 +6,7 @@ interface IService {
 }
 
 interface IQueue {
-  legals: IService[];
-  individuals: IService[];
+  services: IService[];
 }
 
 export interface IOffice {
@@ -18,7 +17,13 @@ export interface IOffice {
   isWorksAllDay: boolean;
   openHoursForLegal: IOpenHoursItem[]; // Режим работы для юр лиц
   openHoursForIndividual: IOpenHoursItem[]; // Режим работы для физ лиц
-  queue: IQueue;
+  windowsLegal: number;
+  windowsIndividual: number;
+  queueLegal: IQueue;
+  queueIndividual: IQueue;
+  queueIndividualPrivileged: IQueue;
   servicesListLegal: IService[];
   servicesListIndividual: IService[];
+  isLegalServing: boolean;
+  isPrivilegedServed?: boolean;
 }
