@@ -122,7 +122,6 @@ export default {
   fetch() {
     this.$axios.$get('/api/get-map-items')
       .then(res => {
-        console.log(res.offices);
         this.officeList = res.offices;
         this.atmList = res.atms;
       })
