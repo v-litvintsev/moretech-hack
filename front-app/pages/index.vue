@@ -57,8 +57,14 @@
 
 <script>
 
+import {yandexMap, ymapMarker} from "vue-yandex-maps";
+
 export default {
   name: 'IndexPage',
+  components: {
+    yandexMap,
+    ymapMarker
+  },
   data() {
     return {
       coords: [54.82, 39.83],
