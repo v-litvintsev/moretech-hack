@@ -2,7 +2,12 @@
   <div class="base-wrapper">
     <div class="map">
       <div class="atm-switcher black rounded-xl pt-1 pb-1 pr-2 pl-2">
-        <v-switch v-model="atmsStatus" class="ma-0 pt-0" hide-details label="ATM" />
+        <v-switch
+          v-model="atmsStatus"
+          class="ma-0 pt-0"
+          hide-details
+          label="ATM"
+        />
       </div>
       <div v-if="loadingRouting" class="loader">
         <v-progress-circular
@@ -60,18 +65,7 @@
         Выбрать услугу
       </v-btn>
       <v-divider class="mt-3 mb-3 grey lighten-2"></v-divider>
-      <div v-if="officeList.length" class="points-preview">
-        <v-card
-          v-for="(point, idx) in [officeList[0], officeList[1]]"
-          :key="`${idx}-pt`"
-          width="50%"
-          flat
-          :height="120"
-          class="white grey lighten-3 overflow-hidden black--text"
-        >
-          {{point.address || ''}}
-        </v-card>
-      </div>
+      <BankCards :offices="officeList" />
       <v-divider class="mt-3 mb-3 grey lighten-2"></v-divider>
       <v-btn
         outlined
@@ -95,18 +89,15 @@
         </template>
       </div>
     </div>
-    <v-btn @click="parseDistance">
-      parse
-    </v-btn>
   </div>
 </template>
 
 <script>
 import { latLng } from 'leaflet'
-import {LMap, LMarker, LTileLayer, LIcon} from 'vue2-leaflet'
+import { LMap, LMarker, LTileLayer, LIcon } from 'vue2-leaflet'
 import Vue2LeafletMarkerCluster from 'vue2-leaflet-markercluster'
+import BankCards from '../components/cards/BankCards.vue'
 import LRM from '@/components/LRM'
-
 
 export default {
   name: 'IndexPage',
@@ -116,7 +107,8 @@ export default {
     LMap,
     LTileLayer,
     LMarker,
-    LIcon
+    LIcon,
+    BankCards,
   },
   data() {
     return {
@@ -251,7 +243,4 @@ export default {
     }
   }
 }
-</style>
-<style lang="scss">
-
 </style>
