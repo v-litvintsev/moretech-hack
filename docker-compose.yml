@@ -9,22 +9,22 @@ services:
     ports:
       - 3001:3001
 
-  strapi-server:
-    container_name: strapi
-    environment:
-      DATABASE_CLIENT: postgres
-      DATABASE_HOST: postgres
-      DATABASE_PORT: 5432
-      DATABASE_NAME: strapi
-      DATABASE_USERNAME: strapi
-      DATABASE_PASSWORD: strapi
-    build:
-      context: ./strapi-server
-      dockerfile: ./Dockerfile
-    ports:
-      - 1337:1337
-    depends_on:
-      - postgres
+  # strapi-server:
+  #   container_name: strapi
+  #   environment:
+  #     DATABASE_CLIENT: postgres
+  #     DATABASE_HOST: postgres
+  #     DATABASE_PORT: 5432
+  #     DATABASE_NAME: strapi
+  #     DATABASE_USERNAME: strapi
+  #     DATABASE_PASSWORD: strapi
+  #   build:
+  #     context: ./strapi-server
+  #     dockerfile: ./Dockerfile
+  #   ports:
+  #     - 1337:1337
+  #   depends_on:
+  #     - postgres
 
   postgres:
     image: postgres
