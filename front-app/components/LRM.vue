@@ -22,14 +22,15 @@ const props = {
     type: IRouter
   },
   plan: {
-    type: L.Routing.Plan
+    type: L.Routing.Plan,
+    default: false
   },
   geocoder: {
     type: IGeocoder
   },
   fitSelectedRoutes: {
     type: [String, Boolean],
-    default: 'smart'
+    default: false
   },
   lineOptions: {
     type: LineOptions
@@ -63,6 +64,10 @@ const props = {
   },
   altLineOptions: {
     type: LineOptions
+  },
+  collapsible: {
+    type: Boolean,
+    default: true
   }
 }
 
@@ -127,3 +132,8 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+.leaflet-routing-container {
+  display: none !important;
+}
+</style>

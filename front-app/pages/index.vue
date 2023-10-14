@@ -11,14 +11,8 @@
         @update:center="centerUpdate"
         @update:zoom="zoomUpdated"
       >
-        <l-tile-layer :url="url"></l-tile-layer>
-        <l-marker :lat-lng="center">
-          <l-icon>
-            <v-icon large color="blue" class="darken-2">
-              mdi-map-marker
-            </v-icon>
-          </l-icon>
-        </l-marker>
+        <l-tile-layer :url="url" />
+        <l-marker :lat-lng="center" />
         <v-marker-cluster>
         <l-marker
           v-for="(item, idx) in officeList"
