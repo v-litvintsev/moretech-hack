@@ -115,16 +115,25 @@ export default {
       zoom: 11,
       bounds: null,
       officeList: [],
+      filtersOfficeList:[],
       atmList: [],
       currentPint: null,
     }
   },
   fetch() {
-    this.$axios.$get('/api/get-map-items')
+    this.$axios.$get('api/get-map-items')
       .then(res => {
         this.officeList = res.offices;
         this.atmList = res.atms;
       })
+    if (this.$route.query?.name && this.$route.query?.userType) {
+      this.$axios.$post('api/get-offices', {
+        service: this.$route.query.name,
+        userType: this.$route.query.userType
+      }).then(res => {
+        console.log(res)
+      })
+    }
   },
   created() {
     const success = (position) => {
