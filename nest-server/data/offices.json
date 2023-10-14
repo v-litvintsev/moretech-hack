@@ -1,5 +1,23 @@
 [
   {
+    "isLegalServing": true,
+    "isPrivilegedServed": false,
+    "servicesListLegal": [
+      {
+        "name": "Расчетно-кассовое обслуживание",
+        "averageTime": 15
+      }
+    ],
+    "servicesListIndividual": [
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      }
+    ],
     "userDistance": 0.08894110099532081,
     "salePointName": "ДО «ГУМ» Филиала № 7701 Банка ВТБ (ПАО)",
     "address": "109012, г. Москва, Красная площадь, д. 3",
@@ -53,6 +71,19 @@
     "myBranch": false
   },
   {
+    "isLegalServing": false,
+    "isPrivilegedServed": false,
+    "servicesListLegal": [],
+    "servicesListIndividual": [
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      }
+    ],
     "userDistance": 0.09358646367429733,
     "salePointName": "ДО «Б. Черкасский, 10/11» Филиала № 7701 Банка ВТБ (ПАО)",
     "address": "109097, г. Москва, Б. Черкасский пер., д. 10/11, стр. 1",
@@ -106,6 +137,19 @@
     "myBranch": false
   },
   {
+    "isLegalServing": false,
+    "isPrivilegedServed": false,
+    "servicesListLegal": [],
+    "servicesListIndividual": [
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      }
+    ],
     "userDistance": 0.08767016198376575,
     "salePointName": "ДО «Охотный ряд-Прайм» Филиала № 7777 Банка ВТБ (ПАО)",
     "address": "103265, г. Москва, Охотный ряд, д. 1",
@@ -159,6 +203,32 @@
     "myBranch": false
   },
   {
+    "isLegalServing": true,
+    "isPrivilegedServed": false,
+    "servicesListLegal": [
+      {
+        "name": "Расчетно-кассовое обслуживание",
+        "averageTime": 15
+      },
+      {
+        "name": "Эквайринг",
+        "averageTime": 13
+      }
+    ],
+    "servicesListIndividual": [
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      }
+    ],
     "userDistance": 0.08729580422139817,
     "salePointName": "ДО «Георгиевский» Филиала № 7701 Банка ВТБ (ПАО)",
     "address": "103265, г. Москва, Георгиевский пер., д. 2",
@@ -212,6 +282,19 @@
     "myBranch": false
   },
   {
+    "isLegalServing": false,
+    "isPrivilegedServed": false,
+    "servicesListLegal": [],
+    "servicesListIndividual": [
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      }
+    ],
     "userDistance": 0.09443250375935307,
     "salePointName": "ДО ЦИК «Пушечный» Филиала № 7701 Банка ВТБ (ПАО)",
     "address": "107031, г. Москва, ул. Кузнецкий мост, д. 16/5, стр. 1",
@@ -265,6 +348,19 @@
     "myBranch": false
   },
   {
+    "isLegalServing": false,
+    "isPrivilegedServed": false,
+    "servicesListLegal": [],
+    "servicesListIndividual": [
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      }
+    ],
     "userDistance": 0.09893172759969794,
     "salePointName": "ДО «Лучников переулок» Филиала № 7701 Банка ВТБ (ПАО)",
     "address": "101990, г. Москва Лучников переулок, д.7/4, строение 1",
@@ -318,6 +414,23 @@
     "myBranch": false
   },
   {
+    "isLegalServing": false,
+    "isPrivilegedServed": false,
+    "servicesListLegal": [],
+    "servicesListIndividual": [
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      }
+    ],
     "userDistance": 0.08667462276502987,
     "salePointName": "ДО «Тверской» Филиала № 7701 Банка ВТБ (ПАО)",
     "address": "125009, г. Москва, ул. Тверская, д. 6/1, стр. 7",
@@ -395,6 +508,23 @@
     "myBranch": false
   },
   {
+    "isLegalServing": false,
+    "isPrivilegedServed": false,
+    "servicesListLegal": [],
+    "servicesListIndividual": [
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      }
+    ],
     "userDistance": 0.09627443931521754,
     "salePointName": "ДО «Кузнецкий мост» Филиала № 7701 Банка ВТБ (ПАО)",
     "address": "107031, г. Москва, ул. Рождественка, д. 8/15, стр. 3",
@@ -448,6 +578,24 @@
     "myBranch": false
   },
   {
+    "isLegalServing": true,
+    "isPrivilegedServed": false,
+    "servicesListLegal": [
+      {
+        "name": "Расчетно-кассовое обслуживание",
+        "averageTime": 15
+      }
+    ],
+    "servicesListIndividual": [
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      }
+    ],
     "userDistance": 0.09676564291865247,
     "salePointName": "ДО «Тургеневский» Филиала в г. Москве",
     "address": "107031, г. Москва, ул. Кузнецкий Мост, д. 17, стр. 1",
@@ -501,6 +649,23 @@
     "myBranch": false
   },
   {
+    "isLegalServing": false,
+    "isPrivilegedServed": false,
+    "servicesListLegal": [],
+    "servicesListIndividual": [
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      }
+    ],
     "userDistance": 0.09676564291865247,
     "salePointName": "ДО №3 «Тургеневский» Банка ВТБ (ПАО)",
     "address": "107031, г. Москва, ул. Кузнецкий Мост, д. 17, стр. 1",
@@ -554,6 +719,32 @@
     "myBranch": false
   },
   {
+    "isLegalServing": true,
+    "isPrivilegedServed": false,
+    "servicesListLegal": [
+      {
+        "name": "Расчетно-кассовое обслуживание",
+        "averageTime": 15
+      },
+      {
+        "name": "Документарные операции",
+        "averageTime": 21
+      },
+      {
+        "name": "Эквайринг",
+        "averageTime": 13
+      }
+    ],
+    "servicesListIndividual": [
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      }
+    ],
     "userDistance": 0.09676564291865247,
     "salePointName": "ДО «Рождественка» Филиала № 7701 Банка ВТБ (ПАО)",
     "address": "107031, г. Москва, ул. Кузнецкий Мост, д. 17, стр. 1",
@@ -607,6 +798,19 @@
     "myBranch": false
   },
   {
+    "isLegalServing": false,
+    "isPrivilegedServed": false,
+    "servicesListLegal": [],
+    "servicesListIndividual": [
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      }
+    ],
     "userDistance": 0.09676564291865247,
     "salePointName": "ДО «Центральный» в г. Москве Филиала № 7701 Банка ВТБ (ПАО)",
     "address": "107031, г. Москва, ул. Кузнецкий Мост, д. 17, стр. 1",
@@ -684,6 +888,32 @@
     "myBranch": false
   },
   {
+    "isLegalServing": true,
+    "isPrivilegedServed": false,
+    "servicesListLegal": [
+      {
+        "name": "Расчетно-кассовое обслуживание",
+        "averageTime": 15
+      },
+      {
+        "name": "Документарные операции",
+        "averageTime": 21
+      },
+      {
+        "name": "Эквайринг",
+        "averageTime": 13
+      }
+    ],
+    "servicesListIndividual": [
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      }
+    ],
     "userDistance": 0.09676564291865247,
     "salePointName": "Филиал № 7701 Банка ВТБ (ПАО)",
     "address": "107031, г. Москва, ул. Кузнецкий Мост, д. 17, стр. 1",
@@ -714,6 +944,23 @@
     "myBranch": false
   },
   {
+    "isLegalServing": false,
+    "isPrivilegedServed": false,
+    "servicesListLegal": [],
+    "servicesListIndividual": [
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      }
+    ],
     "userDistance": 0.07652873299787227,
     "salePointName": "ДО «Воздвиженка» Филиала № 7701 Банка ВТБ (ПАО)",
     "address": "119019, г. Москва, ул. Воздвиженка, д. 9",
@@ -791,6 +1038,28 @@
     "myBranch": false
   },
   {
+    "isLegalServing": true,
+    "isPrivilegedServed": false,
+    "servicesListLegal": [
+      {
+        "name": "Расчетно-кассовое обслуживание",
+        "averageTime": 15
+      },
+      {
+        "name": "Эквайринг",
+        "averageTime": 13
+      }
+    ],
+    "servicesListIndividual": [
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      }
+    ],
     "userDistance": 0.09683609034166749,
     "salePointName": "Филиал «Центральный» Банка ВТБ (ПАО)",
     "address": "107031, г. Москва, ул. Рождественка, д. 10/2, стр. 1",
@@ -820,6 +1089,19 @@
     "myBranch": false
   },
   {
+    "isLegalServing": false,
+    "isPrivilegedServed": false,
+    "servicesListLegal": [],
+    "servicesListIndividual": [
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      }
+    ],
     "userDistance": 0.08611621983029766,
     "salePointName": "ДО «Тверская,13» Филиала № 7701 Банка ВТБ (ПАО)",
     "address": "103032, г. Москва, ул. Тверская, д. 13",
@@ -873,6 +1155,19 @@
     "myBranch": false
   },
   {
+    "isLegalServing": false,
+    "isPrivilegedServed": false,
+    "servicesListLegal": [],
+    "servicesListIndividual": [
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      }
+    ],
     "userDistance": 0.10000240503438086,
     "salePointName": "ДО «Лубянский» Филиала в г. Москве",
     "address": "101000, г. Москва, ул. Большая Лубянка, д. 16, стр. 1",
@@ -926,6 +1221,36 @@
     "myBranch": false
   },
   {
+    "isLegalServing": true,
+    "isPrivilegedServed": false,
+    "servicesListLegal": [
+      {
+        "name": "Расчетно-кассовое обслуживание",
+        "averageTime": 15
+      },
+      {
+        "name": "Документарные операции",
+        "averageTime": 21
+      },
+      {
+        "name": "Эквайринг",
+        "averageTime": 13
+      }
+    ],
+    "servicesListIndividual": [
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      }
+    ],
     "userDistance": 0.10000240503438086,
     "salePointName": "ДО «Лубянский» Филиала № 7701 Банка ВТБ (ПАО)",
     "address": "101000, г. Москва, ул. Большая Лубянка, д. 16, стр. 1",
@@ -979,6 +1304,19 @@
     "myBranch": false
   },
   {
+    "isLegalServing": false,
+    "isPrivilegedServed": false,
+    "servicesListLegal": [],
+    "servicesListIndividual": [
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      }
+    ],
     "userDistance": 0.10000240503438086,
     "salePointName": "ДО № 26 «Лубянский» Банка ВТБ (ПАО)",
     "address": "101000, г. Москва, ул. Большая Лубянка, д. 16, стр. 1",
@@ -1032,6 +1370,23 @@
     "myBranch": false
   },
   {
+    "isLegalServing": false,
+    "isPrivilegedServed": false,
+    "servicesListLegal": [],
+    "servicesListIndividual": [
+      {
+        "name": "Оплата счетов и коммунальных услуг",
+        "averageTime": 7
+      },
+      {
+        "name": "Выпуск и обслуживание банковских карт (дебетовых и кредитных)",
+        "averageTime": 4
+      },
+      {
+        "name": "Потребительские кредиты (на личные нужды)",
+        "averageTime": 11
+      }
+    ],
     "userDistance": 0.0871198567323177,
     "salePointName": "ДО «Тверская, 8» Филиала № 7701 Банка ВТБ (ПАО)",
     "address": "103009, г. Москва, ул. Тверская, д. 8, стр. 1",

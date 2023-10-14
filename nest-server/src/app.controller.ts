@@ -33,15 +33,32 @@ export class AppController {
   }
 
   @Get('/api/get-offices')
-  getOffices(@Query('service') service) {
+  getOffices(
+    @Query('service') service,
+    @Query('userType') userType: 'individual' | 'legal',
+  ) {
     if (service) {
-      const suitableOffices = this.offices.filter((office) =>
-        office.servicesList.some(
-          (officeService) => officeService.name === service,
-        ),
-      );
+      if (userType === 'individual') {
+        const suitableOffices = this.offices.filter((office) =>
+          office.servicesListIndividual.some(
+            (officeService) => officeService.name === service,
+          ),
+        );
 
-      return { offices: suitableOffices };
+        return { offices: suitableOffices };
+      }
+
+      if (userType === 'legal') {
+        const suitableOffices = this.offices.filter((office) =>
+          office.servicesListLegal.some(
+            (officeService) => officeService.name === service,
+          ),
+        );
+
+        return { offices: suitableOffices };
+      }
+
+      return { offices: this.offices };
     } else {
       return { offices: this.offices };
     }

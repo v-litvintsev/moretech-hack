@@ -19,5 +19,6 @@ export interface IOffice {
   openHoursForLegal: IOpenHoursItem[]; // Режим работы для юр лиц
   openHoursForIndividual: IOpenHoursItem[]; // Режим работы для физ лиц
   queue: IQueue;
-  servicesList: IService[];
+  servicesListLegal: IService[];
+  servicesListIndividual: IService[];
 }
