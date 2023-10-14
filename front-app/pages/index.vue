@@ -1,11 +1,7 @@
 <template>
   <div class="base-wrapper">
     <div class="map">
-      <yandex-map
-        :coords="coords"
-        :zoom="8"
-        style="width: 100%; height: 100%;"
-      >
+      <yandex-map :coords="coords" :zoom="8" style="width: 100%; height: 100%">
         <ymap-marker
           marker-id="123"
           :coords="coords"
@@ -36,19 +32,25 @@
         </v-card>
       </div>
       <v-divider class="mt-3 mb-3 grey lighten-2"></v-divider>
-      <v-btn outlined width="100%" class="black--text" large @click="searchModal = true">
-       <v-icon class="mr-2">
-        mdi-format-list-group
-       </v-icon>
+      <v-btn
+        outlined
+        width="100%"
+        class="black--text"
+        large
+        @click="searchModal = true"
+      >
+        <v-icon class="mr-2"> mdi-format-list-group </v-icon>
         Показать все отделения
       </v-btn>
-      <div class="search-box-container" :class="{'search-box-container--open': searchModal}">
+      <div
+        class="search-box-container"
+        :class="{ 'search-box-container--open': searchModal }"
+      >
         <template v-if="searchModal">
           <v-btn class="mt-2" absolute right icon @click="searchModal = false">
-            <v-icon>
-              mdi-close
-            </v-icon>
+            <v-icon> mdi-close </v-icon>
           </v-btn>
+          <BanksFilter />
         </template>
       </div>
     </div>
@@ -56,14 +58,15 @@
 </template>
 
 <script>
-
-import {yandexMap, ymapMarker} from "vue-yandex-maps";
+import { yandexMap, ymapMarker } from 'vue-yandex-maps'
+import BanksFilter from '../components/BanksFilter.vue'
 
 export default {
   name: 'IndexPage',
   components: {
     yandexMap,
-    ymapMarker
+    ymapMarker,
+    BanksFilter,
   },
   data() {
     return {
@@ -81,7 +84,6 @@ export default {
   grid-template-columns: 100%;
   grid-template-rows: 4fr 3fr;
   .map {
-
   }
   .actions-wrapper {
     position: relative;
