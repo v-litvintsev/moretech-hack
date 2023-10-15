@@ -25,4 +25,5 @@ export interface IOffice {
   servicesListIndividual: IService[];
   isLegalServing: boolean;
   isPrivilegedServed?: boolean;
+  userDistance?: number;
 }

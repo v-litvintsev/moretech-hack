@@ -27,6 +27,12 @@ class GetSuitableOfficesDto {
   isPrivileged?: boolean;
 }
 
+class GetOfficesWithTimeDto {
+  offices: IOffice[];
+  userType: 'legal' | 'individual';
+  isPrivileged?: boolean;
+}
+
 @Controller()
 export class AppController {
   offices = JSON.parse(
@@ -41,6 +47,7 @@ export class AppController {
   ) as IAtm[];
 
   constructor(private readonly appService: AppService) {
+    // Эмуляция изменений очередей в течение работы отделений
     setInterval(() => {
       const currentHours = currentDate.getHours();
       const currentWeekDay = currentDate.getDay();
@@ -53,32 +60,73 @@ export class AppController {
             ? office.openHoursIndividual.weekends
             : office.openHoursIndividual.workingDays;
 
+        // Работает ли отделение в текущее время
         if (
           Object.keys(officeHours.averageTraffic).includes(`${currentHours}`)
         ) {
           const officeTraffic = officeHours.averageTraffic[currentHours];
-          const queueIndividual = officeTraffic
-            ? Array(Math.floor(Math.random() * officeTraffic * 2))
-                .fill(null)
-                .map(
-                  () =>
-                    INDIVIDUAL_SERVICES[
-                      Math.floor(Math.random() * INDIVIDUAL_SERVICES.length)
-                    ],
-                )
-            : [];
+          const isFirstHourInDay =
+            Math.min(
+              ...Object.keys(officeHours.averageTraffic).map((key) => +key),
+            ) === currentHours;
 
-          if (office.isLegalServing) {
-            const queueLegal = officeTraffic
-              ? Array(Math.floor(Math.random() * officeTraffic * 0.8))
+          let queueIndividual = office.queueIndividual;
+
+          // В первом рабочем часу заполняется очередь в отделении
+          if (isFirstHourInDay) {
+            queueIndividual = officeTraffic
+              ? Array(Math.floor(Math.random() * 17))
                   .fill(null)
                   .map(
                     () =>
-                      LEGAL_SERVICES[
-                        Math.floor(Math.random() * LEGAL_SERVICES.length)
+                      INDIVIDUAL_SERVICES[
+                        Math.floor(Math.random() * INDIVIDUAL_SERVICES.length)
                       ],
                   )
               : [];
+          } else {
+            // Изменеие элементов в очереди происходит случайно
+            if (Math.random() < 0.5) {
+              queueIndividual.push(
+                INDIVIDUAL_SERVICES[
+                  Math.floor(Math.random() * INDIVIDUAL_SERVICES.length)
+                ],
+              );
+            }
+
+            if (Math.random() < 0.5) {
+              queueIndividual.pop();
+            }
+          }
+
+          if (office.isLegalServing) {
+            let queueLegal = office.queueLegal;
+
+            if (isFirstHourInDay) {
+              queueLegal = officeTraffic
+                ? Array(Math.floor(Math.random() * officeTraffic * 0.8))
+                    .fill(null)
+                    .map(
+                      () =>
+                        LEGAL_SERVICES[
+                          Math.floor(Math.random() * LEGAL_SERVICES.length)
+                        ],
+                    )
+                : [];
+            } else {
+              if (Math.random() < 0.5) {
+                queueLegal.push(
+                  LEGAL_SERVICES[
+                    Math.floor(Math.random() * LEGAL_SERVICES.length)
+                  ],
+                );
+              }
+
+              if (Math.random() < 0.5) {
+                queueLegal.pop();
+              }
+            }
+
             return {
               ...office,
               queueIndividual,
@@ -110,9 +158,9 @@ export class AppController {
             ...office,
             queueIndividual,
             queueIndividualPrivileged: [],
-            queueLegal: [],
           };
         }
+
         return {
           ...office,
           queueIndividual: [],
@@ -145,7 +193,7 @@ export class AppController {
   }
 
   @Post('/api/get-offices')
-  getOffices(@Body() body: GetSuitableOfficesDto) {
+  getOffices(@Body() body: GetSuitableOfficesDto): any {
     if (
       body.service &&
       (body.userType === 'individual' || body.userType === 'legal')
@@ -155,6 +203,7 @@ export class AppController {
 
       if (body.userType === 'individual') {
         const filteredAndSortedOffices = this.offices
+          // Фильтрация: работает ли отделение в текущее время
           .filter((office) =>
             office.servicesListIndividual.some((officeService) => {
               const officeHours =
@@ -170,6 +219,7 @@ export class AppController {
               );
             }),
           )
+          // Вычисление расстояния до пользователя
           .map((office) => {
             return {
               ...office,
@@ -181,50 +231,19 @@ export class AppController {
               ),
             };
           })
+          // Сортировка по близости к пользователю
           .sort((a, b) => {
             return a.userDistance - b.userDistance;
           });
 
+        // Обрезание первых 10 отделений для отображения на карте
         filteredAndSortedOffices.splice(0, 10);
 
-        // const outputOffices = filteredAndSortedOffices.map((office) => {
-        //   if (body.isPrivileged) {
-        //     const queueTime = Math.min(
-        //       (office.queueIndividualPrivileged.reduce(
-        //         (acc, service) => acc + service.averageTime,
-        //         0,
-        //       ) +
-        //         office.queueIndividual.reduce(
-        //           (acc, service) => acc + service.averageTime,
-        //           0,
-        //         )) /
-        //         (office.windowsIndividualPrivileged + office.windowsIndividual),
-
-        //       office.queueIndividualPrivileged.reduce(
-        //         (acc, service) => acc + service.averageTime,
-        //         0,
-        //       ) / office.windowsIndividualPrivileged,
-        //     );
-
-        //     return {
-        //       ...office,
-        //       queueTime: queueTime * RISK_MULTIPLIER,
-        //     };
-        //   }
-
-        //   return {
-        //     ...office,
-        //     queueTime:
-        //       (office.queueIndividual.reduce(
-        //         (acc, service) => acc + service.averageTime,
-        //         0,
-        //       ) /
-        //         office.windowsIndividual) *
-        //       RISK_MULTIPLIER,
-        //   };
-        // });
-
-        return { offices: filteredAndSortedOffices };
+        return {
+          offices: filteredAndSortedOffices,
+          userType: body.userType,
+          isPrivileged: body.isPrivileged,
+        };
       }
 
       if (body.userType === 'legal') {
@@ -251,25 +270,148 @@ export class AppController {
 
         filteredAndSortedOffices.splice(0, 10);
 
-        // const outputOffices = filteredAndSortedOffices.map((office) => {
-        //   return {
-        //     ...office,
-        //     queueTime:
-        //       (office.queueLegal.reduce(
-        //         (acc, service) => acc + service.averageTime,
-        //         0,
-        //       ) /
-        //         office.windowsLegal) *
-        //       RISK_MULTIPLIER,
-        //   };
-        // });
-
-        return { offices: filteredAndSortedOffices };
+        return {
+          offices: filteredAndSortedOffices,
+          userType: body.userType,
+          isPrivileged: body.isPrivileged,
+        };
       }
 
-      return { offices: this.offices };
+      return {
+        offices: this.offices,
+        userType: body.userType,
+        isPrivileged: body.isPrivileged,
+      };
     } else {
       throw new HttpException('Bad request', HttpStatus.BAD_REQUEST);
     }
+  }
+
+  @Post('/api/get-offices-with-time')
+  getOfficesWithTime(@Body() body: GetOfficesWithTimeDto): any {
+    if (body.userType === 'individual') {
+      const outputOffices = body.offices.map((office) => {
+        const currentHours = currentDate.getHours();
+        const currentWeekDay = currentDate.getDay();
+
+        const officeHours =
+          currentWeekDay === 0 || currentWeekDay === 6
+            ? office.openHoursIndividual.weekends
+            : office.openHoursIndividual.workingDays;
+
+        if (office.userDistance) {
+          const travelTime = office.userDistance * 500;
+
+          if (body.isPrivileged) {
+            let queueTime = Math.min(
+              (office.queueIndividualPrivileged.reduce(
+                (acc, service) => acc + service.averageTime,
+                0,
+              ) +
+                office.queueIndividual.reduce(
+                  (acc, service) => acc + service.averageTime,
+                  0,
+                )) /
+                (office.windowsIndividualPrivileged + office.windowsIndividual),
+
+              office.queueIndividualPrivileged.reduce(
+                (acc, service) => acc + service.averageTime,
+                0,
+              ) / office.windowsIndividualPrivileged,
+            );
+
+            if (travelTime > 60) {
+              if (
+                Object.keys(officeHours.averageTraffic).includes(
+                  `${currentHours + Math.floor(travelTime / 60)}`,
+                )
+              ) {
+                queueTime =
+                  (queueTime / officeHours.averageTraffic[currentHours]) *
+                  officeHours.averageTraffic[
+                    currentHours + Math.floor(travelTime / 60)
+                  ];
+              }
+            }
+
+            return {
+              ...office,
+              queueTime: queueTime * RISK_MULTIPLIER,
+            };
+          }
+
+          let queueTime =
+            office.queueIndividual.reduce(
+              (acc, service) => acc + service.averageTime,
+              0,
+            ) / office.windowsIndividual;
+
+          if (
+            Object.keys(officeHours.averageTraffic).includes(
+              `${currentHours + Math.floor(travelTime / 60)}`,
+            )
+          ) {
+            queueTime =
+              (queueTime / officeHours.averageTraffic[currentHours]) *
+              officeHours.averageTraffic[
+                currentHours + Math.floor(travelTime / 60)
+              ];
+          }
+
+          return {
+            ...office,
+            queueTime: queueTime * RISK_MULTIPLIER,
+          };
+        }
+      });
+
+      return { offices: outputOffices };
+    }
+
+    if (body.userType === 'legal') {
+      const outputOffices = body.offices.map((office) => {
+        const currentHours = currentDate.getHours();
+        const currentWeekDay = currentDate.getDay();
+
+        const officeHours =
+          currentWeekDay === 0 || currentWeekDay === 6
+            ? office.openHoursIndividual.weekends
+            : office.openHoursIndividual.workingDays;
+
+        if (office.userDistance) {
+          const travelTime = office.userDistance * 500;
+          let queueTime =
+            office.queueLegal.reduce(
+              (acc, service) => acc + service.averageTime,
+              0,
+            ) / office.windowsLegal;
+
+          if (
+            Object.keys(officeHours.averageTraffic).includes(
+              `${currentHours + Math.floor(travelTime / 60)}`,
+            )
+          ) {
+            queueTime =
+              (queueTime / officeHours.averageTraffic[currentHours]) *
+              officeHours.averageTraffic[
+                currentHours + Math.floor(travelTime / 60)
+              ];
+          }
+
+          return {
+            ...office,
+            queueTime: queueTime * RISK_MULTIPLIER,
+          };
+        }
+      });
+
+      return { offices: outputOffices };
+    }
+
+    const outputOffices = body.offices.map((office) => {
+      return { ...office };
+    });
+
+    return { offices: outputOffices };
   }
 }
