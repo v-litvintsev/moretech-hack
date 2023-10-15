@@ -1,10 +1,10 @@
 <template>
   <vue-scroll-snap
-    v-if="offices.length"
+    v-if="officesList.length"
     :horizontal="true"
     class="points-preview remove-thumb"
   >
-    <div v-for="(point, idx) in offices" :key="idx">
+    <div v-for="(point, idx) in officesList" :key="idx">
       <v-card
         flat
         class="lighten-3 rounded-card card-width pa-4 card-position"
@@ -38,12 +38,20 @@ import VueScrollSnap from 'vue-scroll-snap'
 export default {
   name: 'BankCards',
   components: { VueScrollSnap },
-  props: ['offices'],
+  props: ['offices', 'limitCards'],
   data() {
     return {
       // title: 'Отделение банка',
       title: '', // 'Отделение банка' || 'Офис'
     }
+  },
+  computed: {
+    officesList() {
+      if (this.limitCards > 0) {
+        return this.offices.slice(0, this.limitCards)
+      }
+      return this.offices
+    },
   },
   methods: {
     pathButtonClick() {

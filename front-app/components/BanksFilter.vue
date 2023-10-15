@@ -28,25 +28,22 @@
 </template>
 
 <script>
-import json from '../static/json/atms.json'
-
 export default {
+  props: ['offices', 'showLimit'],
   data() {
     return {
       search: '',
-      fakeData: json,
       banksList: [],
       headers: [{ text: 'Address', value: 'address' }],
       selectedFilter: 'address',
-      showCount: 10,
     }
   },
   created() {
-    this.getBanksList(this.showCount)
+    this.getBanksList(this.showLimit)
   },
   methods: {
     getBanksList(limit) {
-      const banks = this.fakeData.atms
+      const banks = this.offices
       for (let i = 0; i < limit; i++) {
         // TODO: get active services
         // const activeServices = Array(banks[i].services).filter(
