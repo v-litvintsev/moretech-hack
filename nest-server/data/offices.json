@@ -53,8 +53,8 @@
         }
       },
       "weekends": {
-        "start": 10,
-        "end": 10,
+        "start": null,
+        "end": null,
         "averageTraffic": {}
       }
     },

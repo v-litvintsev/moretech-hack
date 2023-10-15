@@ -187,34 +187,44 @@ export class AppController {
 
         filteredAndSortedOffices.splice(0, 10);
 
-        const outputOffices = filteredAndSortedOffices.map((office) => {
-          if (body.isPrivileged) {
-            return {
-              ...office,
-              queueTime:
-                (office.queueIndividualPrivileged.reduce(
-                  (acc, service) => acc + service.averageTime,
-                  0,
-                ) /
-                  (office.windowsIndividualPrivileged +
-                    office.windowsIndividual)) *
-                RISK_MULTIPLIER,
-            };
-          }
+        // const outputOffices = filteredAndSortedOffices.map((office) => {
+        //   if (body.isPrivileged) {
+        //     const queueTime = Math.min(
+        //       (office.queueIndividualPrivileged.reduce(
+        //         (acc, service) => acc + service.averageTime,
+        //         0,
+        //       ) +
+        //         office.queueIndividual.reduce(
+        //           (acc, service) => acc + service.averageTime,
+        //           0,
+        //         )) /
+        //         (office.windowsIndividualPrivileged + office.windowsIndividual),
 
-          return {
-            ...office,
-            queueTime:
-              (office.queueIndividual.reduce(
-                (acc, service) => acc + service.averageTime,
-                0,
-              ) /
-                office.windowsIndividual) *
-              RISK_MULTIPLIER,
-          };
-        });
+        //       office.queueIndividualPrivileged.reduce(
+        //         (acc, service) => acc + service.averageTime,
+        //         0,
+        //       ) / office.windowsIndividualPrivileged,
+        //     );
 
-        return { offices: outputOffices };
+        //     return {
+        //       ...office,
+        //       queueTime: queueTime * RISK_MULTIPLIER,
+        //     };
+        //   }
+
+        //   return {
+        //     ...office,
+        //     queueTime:
+        //       (office.queueIndividual.reduce(
+        //         (acc, service) => acc + service.averageTime,
+        //         0,
+        //       ) /
+        //         office.windowsIndividual) *
+        //       RISK_MULTIPLIER,
+        //   };
+        // });
+
+        return { offices: filteredAndSortedOffices };
       }
 
       if (body.userType === 'legal') {
@@ -241,20 +251,20 @@ export class AppController {
 
         filteredAndSortedOffices.splice(0, 10);
 
-        const outputOffices = filteredAndSortedOffices.map((office) => {
-          return {
-            ...office,
-            queueTime:
-              (office.queueLegal.reduce(
-                (acc, service) => acc + service.averageTime,
-                0,
-              ) /
-                office.windowsLegal) *
-              RISK_MULTIPLIER,
-          };
-        });
+        // const outputOffices = filteredAndSortedOffices.map((office) => {
+        //   return {
+        //     ...office,
+        //     queueTime:
+        //       (office.queueLegal.reduce(
+        //         (acc, service) => acc + service.averageTime,
+        //         0,
+        //       ) /
+        //         office.windowsLegal) *
+        //       RISK_MULTIPLIER,
+        //   };
+        // });
 
-        return { offices: outputOffices };
+        return { offices: filteredAndSortedOffices };
       }
 
       return { offices: this.offices };
