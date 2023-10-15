@@ -1,32 +1,35 @@
 <template>
-  <div class="mt-2">
-    <v-card-title>
-      <v-text-field
-        v-model="search"
-        label="Найти"
-        single-line
-        hide-details
-      ></v-text-field>
-    </v-card-title>
-    <v-spacer></v-spacer>
-    <v-data-table
-      :headers="headers"
-      :items="banksList.slice(0, showLimit)"
-      :search="search"
-      :sortable="false"
-      :hide-default-header="true"
-      :hide-default-footer="true"
-      :custom-filter="defaultSearch"
-    >
-      <template v-slot:item="{ item }">
-        <tr>
-          <td class="custom-class pa-3">
-            <h4 class="mb-2">{{ item.salePointName }}</h4>
-            {{ item.address }}
-          </td>
-        </tr>
-      </template>
-    </v-data-table>
+  <div class="mt-2 view overflow-hidden">
+    <section class="view overflow-auto">
+      <v-card-title>
+        <v-text-field
+          v-model="search"
+          label="Найти"
+          single-line
+          hide-details
+        ></v-text-field>
+      </v-card-title>
+      <v-spacer></v-spacer>
+      <v-data-table
+        :headers="headers"
+        :items="banksList.slice(0, showLimit)"
+        :search="search"
+        :sortable="false"
+        :hide-default-header="true"
+        :hide-default-footer="true"
+        :custom-filter="defaultSearch"
+        fixed-header
+      >
+        <template v-slot:item="{ item }">
+          <tr>
+            <td class="custom-class pa-3">
+              <h4 class="mb-2">{{ item.salePointName }}</h4>
+              {{ item.address }}
+            </td>
+          </tr>
+        </template>
+      </v-data-table>
+    </section>
   </div>
 </template>
 
@@ -134,4 +137,11 @@ tbody {
     background-color: transparent !important;
   }
 }
+
+.view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 </style>
+
