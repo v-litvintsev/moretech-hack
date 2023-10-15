@@ -65,7 +65,7 @@
         Выбрать услугу
       </v-btn>
       <v-divider class="mt-3 mb-3 grey lighten-2"></v-divider>
-      <BankCards :offices="officeList" />
+      <BankCards :offices="officeList" :limit-cards="10" />
       <v-divider class="mt-3 mb-3 grey lighten-2"></v-divider>
       <v-btn
         outlined
@@ -85,7 +85,7 @@
           <v-btn class="mt-2" absolute right icon @click="searchModal = false">
             <v-icon> mdi-close </v-icon>
           </v-btn>
-          <BanksFilter />
+          <BanksFilter :offices="officeList" :show-limit="10" />
         </template>
       </div>
     </div>

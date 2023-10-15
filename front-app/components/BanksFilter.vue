@@ -11,16 +11,19 @@
     <v-spacer></v-spacer>
     <v-data-table
       :headers="headers"
-      :items="banksList"
+      :items="banksList.slice(0, showLimit)"
       :search="search"
       :sortable="false"
       :hide-default-header="true"
       :hide-default-footer="true"
-      :custom-filter="searchByAddress"
+      :custom-filter="defaultSearch"
     >
       <template v-slot:item="{ item }">
         <tr>
-          <td class="custom-class">{{ item.address }}</td>
+          <td class="custom-class pa-3">
+            <h4 class="mb-2">{{ item.salePointName }}</h4>
+            {{ item.address }}
+          </td>
         </tr>
       </template>
     </v-data-table>
@@ -28,45 +31,85 @@
 </template>
 
 <script>
-import json from '../static/json/atms.json'
-
 export default {
+  props: ['offices', 'showLimit'],
   data() {
     return {
       search: '',
-      fakeData: json,
-      banksList: [],
       headers: [{ text: 'Address', value: 'address' }],
       selectedFilter: 'address',
-      showCount: 10,
     }
   },
-  created() {
-    this.getBanksList(this.showCount)
+  computed: {
+    banksList() {
+      return this.getBanksList()
+    },
   },
   methods: {
-    getBanksList(limit) {
-      const banks = this.fakeData.atms
-      for (let i = 0; i < limit; i++) {
-        // TODO: get active services
-        // const activeServices = Array(banks[i].services).filter(
-        //   (service) => service.serviceActivity === 'AVAILABLE'
-        // )
+    getBanksList() {
+      const banks = []
 
-        this.banksList.push({
-          address: banks[i].address,
-          // services: activeServices,
+      for (const office of this.offices) {
+        // check if open
+        // if (office.status === 'открытая') {
+        banks.push({
+          salePointName: office.salePointName, // for searching by name
+          address: office.address, // for searching by address
+          distance: office.distance, // sorting by distance
         })
+        // }
+      }
+
+      return banks
+
+      // TODO: get active services
+      // const activeServices = Array(banks[i].services).filter(
+      //   (service) => service.serviceActivity === 'AVAILABLE'
+      // )
+      // services: activeServices,
+      // }
+    },
+
+    // TODO: search the most nearest points to user location
+    sortPointsByDistance() {
+      const compareByDistance = (a, b) => a.distance - b.distance
+      this.banksList.sort(compareByDistance)
+    },
+
+    defaultSearch(items, search, filter) {
+      return (
+        this.searchByPointName(items, search, filter) ||
+        this.searchByAddress(items, search, filter)
+      )
+    },
+
+    searchByPointName(items, search, filter) {
+      const searchQuery = search.toString().toLowerCase()
+      const salePointNameLowerCase = filter.salePointName.toLowerCase()
+      const words = salePointNameLowerCase.split(' ')
+      for (const w of words) {
+        if (w.startsWith(searchQuery)) {
+          return filter
+        }
+      }
+
+      if (salePointNameLowerCase.includes(searchQuery)) {
+        return filter
       }
     },
 
     searchByAddress(items, search, filter) {
       const searchQuery = search.toString().toLowerCase()
-      const words = filter.address.toLowerCase().split(' ')
+      const addressLowerCase = filter.address.toLowerCase()
+      const words = addressLowerCase.split(' ')
       for (const w of words) {
         if (w.startsWith(searchQuery)) {
           return filter
         }
+      }
+
+      if (addressLowerCase.includes(searchQuery)) {
+        return filter
       }
     },
 
