@@ -236,11 +236,9 @@ export class AppController {
             return a.userDistance - b.userDistance;
           });
 
-        // Обрезание первых 10 отделений для отображения на карте
-        filteredAndSortedOffices.splice(0, 10);
-
         return {
-          offices: filteredAndSortedOffices,
+          // Обрезание первых 10 отделений для отображения на карте
+          offices: filteredAndSortedOffices.slice(0, 10),
           userType: body.userType,
           isPrivileged: body.isPrivileged,
         };
@@ -268,17 +266,15 @@ export class AppController {
             return a.userDistance - b.userDistance;
           });
 
-        filteredAndSortedOffices.splice(0, 10);
-
         return {
-          offices: filteredAndSortedOffices,
+          offices: filteredAndSortedOffices.slice(0, 10),
           userType: body.userType,
           isPrivileged: body.isPrivileged,
         };
       }
 
       return {
-        offices: this.offices,
+        offices: this.offices.slice(0, 10),
         userType: body.userType,
         isPrivileged: body.isPrivileged,
       };
@@ -337,6 +333,7 @@ export class AppController {
             return {
               ...office,
               queueTime: queueTime * RISK_MULTIPLIER,
+              amountTime: travelTime + queueTime * RISK_MULTIPLIER,
             };
           }
 
@@ -361,6 +358,7 @@ export class AppController {
           return {
             ...office,
             queueTime: queueTime * RISK_MULTIPLIER,
+            amountTime: travelTime + queueTime * RISK_MULTIPLIER,
           };
         }
       });
@@ -401,6 +399,7 @@ export class AppController {
           return {
             ...office,
             queueTime: queueTime * RISK_MULTIPLIER,
+            amountTime: travelTime + queueTime * RISK_MULTIPLIER,
           };
         }
       });
