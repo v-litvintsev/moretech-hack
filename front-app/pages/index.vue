@@ -78,7 +78,7 @@
         Показать все отделения
       </v-btn>
       <div
-        class="search-box-container"
+        class="search-box-container overflow-hidden"
         :class="{ 'search-box-container--open': searchModal }"
       >
         <template v-if="searchModal">
